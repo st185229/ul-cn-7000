@@ -1,0 +1,180 @@
+{
+	"name": "Current Health Expenditure_AS_GDP_percent",
+	"properties": {
+		"nbformat": 4,
+		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "ghparkcluster",
+			"type": "BigDataPoolReference"
+		},
+		"sessionProperties": {
+			"driverMemory": "28g",
+			"driverCores": 4,
+			"executorMemory": "28g",
+			"executorCores": 4,
+			"numExecutors": 2,
+			"runAsWorkspaceSystemIdentity": false,
+			"conf": {
+				"spark.dynamicAllocation.enabled": "false",
+				"spark.dynamicAllocation.minExecutors": "2",
+				"spark.dynamicAllocation.maxExecutors": "2",
+				"spark.autotune.trackingId": "de5f4663-6077-4095-8432-f4d7f11b5de0"
+			}
+		},
+		"metadata": {
+			"saveOutput": true,
+			"synapse_widget": {
+				"version": "0.1"
+			},
+			"enableDebugMode": false,
+			"language_info": {
+				"name": "python"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/56fbbfce-6dab-4d62-af16-ccd107f4d9d3/resourceGroups/DEV-EA-EASTUS-DF-RG/providers/Microsoft.Synapse/workspaces/healthdataws/bigDataPools/ghparkcluster",
+				"name": "ghparkcluster",
+				"type": "Spark",
+				"endpoint": "https://healthdataws.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/ghparkcluster",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net",
+					"authHeader": null
+				},
+				"sparkVersion": "3.4",
+				"nodeCount": 10,
+				"cores": 4,
+				"memory": 28,
+				"extraHeader": null
+			},
+			"sessionKeepAliveTimeout": 30
+		},
+		"cells": [
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"\r\n",
+					"# Current Health Expenditure (CHE) as % Gross Domestic Product (GDP)\r\n",
+					""
+				]
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"microsoft": {
+						"language": "python"
+					},
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"%%pyspark\r\n",
+					"\r\n",
+					"import pandas as pd\r\n",
+					"import matplotlib.pyplot as plt\r\n",
+					"\r\n",
+					"df = spark.read.load('abfss://healthdata-fs@distributedanalytics.dfs.core.windows.net/data/Current Health Expenditure (CHE) as % Gross Domestic Product (GDP).csv', format='csv'\r\n",
+					"## If header exists uncomment line below\r\n",
+					", header=True\r\n",
+					")\r\n",
+					"\r\n",
+					"df.show(truncate=False)\r\n",
+					"\r\n",
+					"# convery spark df to pandas\r\n",
+					"pandas_df = df.toPandas()\r\n",
+					"\r\n",
+					"# as it is loaded from csv,Identify the columns that need to be converted to numeric\r\n",
+					"columns_to_convert = list(pandas_df.columns)[1:]\r\n",
+					"\r\n",
+					"# Convert the specified columns to numeric\r\n",
+					"for col in columns_to_convert:\r\n",
+					"    pandas_df[col] = pd.to_numeric(pandas_df[col], errors='coerce')\r\n",
+					"\r\n",
+					"df_transposed = pandas_df.set_index('Indicators').T\r\n",
+					"\r\n",
+					"df_transposed.plot(kind='bar', stacked=True, figsize=(12, 6))\r\n",
+					"\r\n",
+					"plt.show()\r\n",
+					"\r\n",
+					""
+				],
+				"execution_count": 6
+			},
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"## Current Health Expenditure (CHE) -In million constant (2022) US$ ( Standarised based on USD 2022 to accomodate Inflation)"
+				]
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"microsoft": {
+						"language": "python"
+					},
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"%%pyspark\r\n",
+					"\r\n",
+					"import pandas as pd\r\n",
+					"import matplotlib.pyplot as plt\r\n",
+					"\r\n",
+					"df = spark.read.load('abfss://healthdata-fs@distributedanalytics.dfs.core.windows.net/data/CHE_In million constant_2022_USD.csv', format='csv'\r\n",
+					"## If header exists uncomment line below\r\n",
+					", header=True\r\n",
+					")\r\n",
+					"\r\n",
+					"df.show(truncate=False)\r\n",
+					"\r\n",
+					"# convery spark df to pandas\r\n",
+					"pandas_df = df.toPandas()\r\n",
+					"\r\n",
+					"# as it is loaded from csv,Identify the columns that need to be converted to numeric\r\n",
+					"columns_to_convert = list(pandas_df.columns)[1:]\r\n",
+					"\r\n",
+					"# Convert the specified columns to numeric\r\n",
+					"for col in columns_to_convert:\r\n",
+					"    pandas_df[col] = pd.to_numeric(pandas_df[col], errors='coerce')\r\n",
+					"\r\n",
+					"df_transposed = pandas_df.set_index('Indicators').T\r\n",
+					"\r\n",
+					"df_transposed.plot(kind='bar', stacked=True, figsize=(12, 6))\r\n",
+					"\r\n",
+					"plt.show()"
+				],
+				"execution_count": 11
+			}
+		]
+	}
+}
