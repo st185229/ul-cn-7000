@@ -1,0 +1,19 @@
+{
+	"name": "health_data_flow",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"name": "healthdatastream"
+				}
+			],
+			"sinks": [],
+			"transformations": [],
+			"scriptLines": [
+				"source(allowSchemaDrift: true,",
+				"     validateSchema: false) ~> healthdatastream"
+			]
+		}
+	}
+}
