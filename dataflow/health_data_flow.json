@@ -5,14 +5,47 @@
 		"typeProperties": {
 			"sources": [
 				{
+					"dataset": {
+						"referenceName": "heathdatasourcefiles",
+						"type": "DatasetReference"
+					},
 					"name": "healthdatastream"
 				}
 			],
 			"sinks": [],
 			"transformations": [],
 			"scriptLines": [
-				"source(allowSchemaDrift: true,",
-				"     validateSchema: false) ~> healthdatastream"
+				"source(output(",
+				"          Indicators as string,",
+				"          {2000} as string,",
+				"          {2001} as string,",
+				"          {2002} as string,",
+				"          {2003} as string,",
+				"          {2004} as string,",
+				"          {2005} as string,",
+				"          {2006} as string,",
+				"          {2007} as string,",
+				"          {2008} as string,",
+				"          {2009} as string,",
+				"          {2010} as string,",
+				"          {2011} as string,",
+				"          {2012} as string,",
+				"          {2013} as string,",
+				"          {2014} as string,",
+				"          {2015} as string,",
+				"          {2016} as string,",
+				"          {2017} as string,",
+				"          {2018} as string,",
+				"          {2019} as string,",
+				"          {2020} as string,",
+				"          {2021} as string,",
+				"          {2022} as string,",
+				"          {2023} as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     inferDriftedColumnTypes: true,",
+				"     ignoreNoFilesFound: false) ~> healthdatastream"
 			]
 		}
 	}
