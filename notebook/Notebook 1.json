@@ -3,6 +3,10 @@
 	"properties": {
 		"nbformat": 4,
 		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "ghparkcluster",
+			"type": "BigDataPoolReference"
+		},
 		"sessionProperties": {
 			"driverMemory": "28g",
 			"driverCores": 4,
@@ -13,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "2b79c2a9-b2eb-4732-aaeb-6b7c7ac59332"
+				"spark.autotune.trackingId": "e9f5ed0b-d09f-4887-8246-7c0420d31e88"
 			}
 		},
 		"metadata": {
@@ -25,6 +29,21 @@
 			},
 			"language_info": {
 				"name": "python"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/56fbbfce-6dab-4d62-af16-ccd107f4d9d3/resourceGroups/DEV-EA-EASTUS-DF-RG/providers/Microsoft.Synapse/workspaces/healthdataws/bigDataPools/ghparkcluster",
+				"name": "ghparkcluster",
+				"type": "Spark",
+				"endpoint": "https://healthdataws.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/ghparkcluster",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net"
+				},
+				"sparkVersion": "3.4",
+				"nodeCount": 3,
+				"cores": 4,
+				"memory": 28,
+				"automaticScaleJobs": false
 			},
 			"sessionKeepAliveTimeout": 30
 		},
