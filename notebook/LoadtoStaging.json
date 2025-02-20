@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "b936efe9-427f-45b7-b997-ba572469cd07"
+				"spark.autotune.trackingId": "45e13126-b427-403d-aac1-f527682e4fdd"
 			}
 		},
 		"metadata": {
@@ -54,12 +54,14 @@
 					"%%pyspark\r\n",
 					"\r\n",
 					"# Define the storage account and container\r\n",
-					"storage_account_name = \"healthdata-fs\"\r\n",
-					"container_name = \"distributedanalytics\"\r\n",
+					"storage_account_name = \"distributedanalytics\"\r\n",
+					"container_name = \"healthdata-fs\"\r\n",
 					"directory_path = \"data\"\r\n",
 					"\r\n",
 					"# Define the full path\r\n",
 					"full_path = f\"abfss://{container_name}@{storage_account_name}.dfs.core.windows.net/{directory_path}\"\r\n",
+					"\r\n",
+					"# df = spark.read.load('abfss://healthdata-fs@distributedanalytics.dfs.core.windows.net/data/CHEAsPercentGDP.csv', format='csv'\r\n",
 					"\r\n",
 					"\r\n",
 					"fs  = sc._jvm.org.apache.hadoop.fs.FileSystem.get(sc._jsc.hadoopConfiguration())\r\n",
@@ -72,7 +74,9 @@
 					"    file_name = file.getPath().getName()\r\n",
 					"    if file_name.endswith(\".csv\"):\r\n",
 					"        # Read the CSV file into a DataFrame\r\n",
+					"        print(f\"the file is {full_path}/{file_name}\")\r\n",
 					"        df = spark.read.option(\"header\", \"true\").csv(f\"{full_path}/{file_name}\")\r\n",
+					"\r\n",
 					"        # Define the Delta Lake table path\r\n",
 					"        delta_table_path = f\"abfss://{container_name}@{storage_account_name}.dfs.core.windows.net/delta/{file_name.replace('.csv', '')}\"\r\n",
 					"         # Check if the Delta table already exists\r\n",
@@ -86,7 +90,7 @@
 					"\r\n",
 					""
 				],
-				"execution_count": 12
+				"execution_count": 3
 			},
 			{
 				"cell_type": "code",
