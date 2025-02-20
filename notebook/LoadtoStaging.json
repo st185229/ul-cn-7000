@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "45e13126-b427-403d-aac1-f527682e4fdd"
+				"spark.autotune.trackingId": "1bb9c889-62f2-45cd-8e70-0e9500a98f1b"
 			}
 		},
 		"metadata": {
@@ -83,14 +83,14 @@
 					"        if not fs.exists(sc._jvm.org.apache.hadoop.fs.Path(delta_table_path)):\r\n",
 					"            # Read the CSV file into a DataFrame\r\n",
 					"            df = spark.read.option(\"header\", \"true\").csv(f\"{full_path}/{file_name}\")\r\n",
-					"            df.write.format(\"delta\").mode(\"overwrite\").save(delta_table_path)\r\n",
+					"            df.write.format(\"delta\").mode(\"overwrite\").option(\"delta.columnMapping.mode\", \"name\").save(delta_table_path)\r\n",
 					"            print(f\"Delta Lake table created for {file_name} at {delta_table_path}\")\r\n",
 					"        else:\r\n",
 					"            print(f\"Delta Lake table already exists for {file_name}, skipping...\")\r\n",
 					"\r\n",
 					""
 				],
-				"execution_count": 3
+				"execution_count": 5
 			},
 			{
 				"cell_type": "code",
