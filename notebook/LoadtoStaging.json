@@ -1,5 +1,5 @@
 {
-	"name": "Notebook 1",
+	"name": "LoadtoStaging",
 	"properties": {
 		"nbformat": 4,
 		"nbformat_minor": 2,
@@ -17,15 +17,15 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "e9f5ed0b-d09f-4887-8246-7c0420d31e88"
+				"spark.autotune.trackingId": "9b8758b3-e861-4e53-858b-852ad08c43fa"
 			}
 		},
 		"metadata": {
 			"saveOutput": true,
-			"enableDebugMode": false,
+			"enableDebugMode": true,
 			"kernelspec": {
 				"name": "synapse_pyspark",
-				"display_name": "python"
+				"display_name": "Synapse PySpark"
 			},
 			"language_info": {
 				"name": "python"
@@ -52,11 +52,32 @@
 				"cell_type": "code",
 				"source": [
 					"%%pyspark\r\n",
-					"df = spark.read.load('abfss://healthdata-fs@distributedanalytics.dfs.core.windows.net/data/@item().name', format='csv'\r\n",
-					"## If header exists uncomment line below\r\n",
-					"##, header=True\r\n",
-					")\r\n",
-					"df.write.mode(\"overwrite\").saveAsTable(\"default.@item().name\")"
+					"\r\n",
+					"# Define the storage account and container\r\n",
+					"storage_account_name = \"healthdata-fs\"\r\n",
+					"container_name = \"distributedanalytics\"\r\n",
+					"directory_path = \"data\"\r\n",
+					"\r\n",
+					"# Define the full path\r\n",
+					"full_path = f\"abfss://{container_name}@{storage_account_name}.dfs.core.windows.net/{directory_path}\"\r\n",
+					"\r\n",
+					"\r\n",
+					"fs  = spark._jvm.org.apache.hadoop.fs.FileSystem.get(sc._jsc.hadoopConfiguration())\r\n",
+					"\r\n",
+					"# List files\r\n",
+					"path = sc._jvm.org.apache.hadoop.fs.Path(full_path)\r\n",
+					"files = fs.listStatus(path)\r\n",
+					"# Display the files\r\n",
+					"for file in files:\r\n",
+					"    print(file.getPath().toString())\r\n",
+					""
+				],
+				"execution_count": 5
+			},
+			{
+				"cell_type": "code",
+				"source": [
+					""
 				],
 				"execution_count": null
 			}
