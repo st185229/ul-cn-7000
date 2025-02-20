@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "9b8758b3-e861-4e53-858b-852ad08c43fa"
+				"spark.autotune.trackingId": "b936efe9-427f-45b7-b997-ba572469cd07"
 			}
 		},
 		"metadata": {
@@ -62,17 +62,31 @@
 					"full_path = f\"abfss://{container_name}@{storage_account_name}.dfs.core.windows.net/{directory_path}\"\r\n",
 					"\r\n",
 					"\r\n",
-					"fs  = spark._jvm.org.apache.hadoop.fs.FileSystem.get(sc._jsc.hadoopConfiguration())\r\n",
+					"fs  = sc._jvm.org.apache.hadoop.fs.FileSystem.get(sc._jsc.hadoopConfiguration())\r\n",
 					"\r\n",
 					"# List files\r\n",
 					"path = sc._jvm.org.apache.hadoop.fs.Path(full_path)\r\n",
 					"files = fs.listStatus(path)\r\n",
 					"# Display the files\r\n",
 					"for file in files:\r\n",
-					"    print(file.getPath().toString())\r\n",
+					"    file_name = file.getPath().getName()\r\n",
+					"    if file_name.endswith(\".csv\"):\r\n",
+					"        # Read the CSV file into a DataFrame\r\n",
+					"        df = spark.read.option(\"header\", \"true\").csv(f\"{full_path}/{file_name}\")\r\n",
+					"        # Define the Delta Lake table path\r\n",
+					"        delta_table_path = f\"abfss://{container_name}@{storage_account_name}.dfs.core.windows.net/delta/{file_name.replace('.csv', '')}\"\r\n",
+					"         # Check if the Delta table already exists\r\n",
+					"        if not fs.exists(sc._jvm.org.apache.hadoop.fs.Path(delta_table_path)):\r\n",
+					"            # Read the CSV file into a DataFrame\r\n",
+					"            df = spark.read.option(\"header\", \"true\").csv(f\"{full_path}/{file_name}\")\r\n",
+					"            df.write.format(\"delta\").mode(\"overwrite\").save(delta_table_path)\r\n",
+					"            print(f\"Delta Lake table created for {file_name} at {delta_table_path}\")\r\n",
+					"        else:\r\n",
+					"            print(f\"Delta Lake table already exists for {file_name}, skipping...\")\r\n",
+					"\r\n",
 					""
 				],
-				"execution_count": 5
+				"execution_count": 12
 			},
 			{
 				"cell_type": "code",
