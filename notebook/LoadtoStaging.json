@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "051c2fa4-080f-4df0-bf01-1fce1aba53ec"
+				"spark.autotune.trackingId": "dca18443-e6df-43c4-ae53-211576113a35"
 			}
 		},
 		"metadata": {
@@ -77,6 +77,7 @@
 					"        print(f\"the file is {full_path}/{file_name}\")\r\n",
 					"        df = spark.read.option(\"header\", \"true\").csv(f\"{full_path}/{file_name}\")\r\n",
 					"\r\n",
+					"\r\n",
 					"        # Define the Delta Lake table path\r\n",
 					"        delta_table_path = f\"abfss://{container_name}@{storage_account_name}.dfs.core.windows.net/delta/{file_name.replace('.csv', '')}\"\r\n",
 					"         # Check if the Delta table already exists\r\n",
@@ -84,12 +85,21 @@
 					"            # Read the CSV file into a DataFrame\r\n",
 					"            df = spark.read.option(\"header\", \"true\").csv(f\"{full_path}/{file_name}\")\r\n",
 					"            df.write.format(\"delta\").mode(\"overwrite\").option(\"delta.columnMapping.mode\", \"name\").save(delta_table_path)\r\n",
+					"            delta_df = spark.read.format(\"delta\").load(delta_table_path)\r\n",
+					"\r\n",
+					"\r\n",
+					"            table_name = file_name.replace('.csv', '')\r\n",
+					"            # Write data to Lake database table\r\n",
+					"            delta_df.write.format(\"parquet\").saveAsTable(f\"default.{table_name}\")\r\n",
+					"\r\n",
+					"\r\n",
 					"            print(f\"Delta Lake table created for {file_name} at {delta_table_path}\")\r\n",
 					"        else:\r\n",
 					"            print(f\"Delta Lake table already exists for {file_name}, skipping...\")\r\n",
+					"            \r\n",
 					""
 				],
-				"execution_count": 15
+				"execution_count": 27
 			},
 			{
 				"cell_type": "code",
@@ -110,7 +120,7 @@
 					"\r\n",
 					""
 				],
-				"execution_count": 13
+				"execution_count": 28
 			}
 		]
 	}
