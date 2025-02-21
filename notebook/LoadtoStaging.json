@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "9fe660c3-2e1e-4f48-809b-b626b7b11d56"
+				"spark.autotune.trackingId": "051c2fa4-080f-4df0-bf01-1fce1aba53ec"
 			}
 		},
 		"metadata": {
@@ -87,17 +87,30 @@
 					"            print(f\"Delta Lake table created for {file_name} at {delta_table_path}\")\r\n",
 					"        else:\r\n",
 					"            print(f\"Delta Lake table already exists for {file_name}, skipping...\")\r\n",
-					"\r\n",
 					""
 				],
-				"execution_count": 6
+				"execution_count": 15
 			},
 			{
 				"cell_type": "code",
 				"source": [
+					"from delta.tables import DeltaTable\r\n",
+					"\r\n",
+					"all_tables = spark.sql(\"SHOW TABLES\").collect()\r\n",
+					"delta_tables = []\r\n",
+					"\r\n",
+					"for table in all_tables:\r\n",
+					"    table_full_name = f\"{table.tableName}\"\r\n",
+					"    print(table_full_name)\r\n",
+					"    if DeltaTable.isDeltaTable(spark, table_full_name):\r\n",
+					"        delta_tables.append(table_full_name)\r\n",
+					"\r\n",
+					"for delta_table in delta_tables:\r\n",
+					"    print(delta_table)\r\n",
+					"\r\n",
 					""
 				],
-				"execution_count": null
+				"execution_count": 13
 			}
 		]
 	}
