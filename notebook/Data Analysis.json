@@ -18,7 +18,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "2b02ebde-4558-48e5-8568-7ce9b0332977"
+				"spark.autotune.trackingId": "d80d3c0d-80c7-4faa-8007-9318d5bfad90"
 			}
 		},
 		"metadata": {
@@ -257,12 +257,104 @@
 			},
 			{
 				"cell_type": "code",
+				"metadata": {
+					"collapsed": false
+				},
 				"source": [
 					"%%pyspark\r\n",
 					"df = spark.sql(\"SELECT * FROM `default`.`cheaspercentgdp`\")\r\n",
-					"df.show(10)"
+					"df.show(10)\r\n",
+					"\r\n",
+					"# convery spark df to pandas\r\n",
+					"pandas_df = df.toPandas()\r\n",
+					"\r\n",
+					"# as it is loaded from csv,Identify the columns that need to be converted to numeric\r\n",
+					"columns_to_convert = list(pandas_df.columns)[1:]\r\n",
+					"\r\n",
+					"\r\n",
+					"# Convert the specified columns to numeric\r\n",
+					"for col in columns_to_convert:\r\n",
+					"    pandas_df[col] = pd.to_numeric(pandas_df[col], errors='coerce')\r\n",
+					"\r\n",
+					"df_transposed = pandas_df.set_index('Indicators').T\r\n",
+					"\r\n",
+					"df_transposed.plot(kind='bar', stacked=True, figsize=(12, 6))\r\n",
+					"\r\n",
+					"# Customize plot\r\n",
+					"plt.title('Current Health Expenditure (CHE) as % Gross Domestic Product (GDP)')\r\n",
+					"plt.xlabel('Year')\r\n",
+					"plt.ylabel('CHE percentage GDP')\r\n",
+					"plt.xticks(rotation=45)\r\n",
+					"plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))\r\n",
+					"\r\n",
+					"plt.show()\r\n",
+					""
 				],
-				"execution_count": 6
+				"execution_count": 28
+			},
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"CHE per capita USD"
+				]
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"collapsed": false
+				},
+				"source": [
+					"%%pyspark\r\n",
+					"df = spark.sql(\"SELECT * FROM `default`.`chepercapitausd`where SpatialDimValueCode='GBR' order by Period  \")\r\n",
+					"\r\n",
+					"df.show(25)\r\n",
+					"\r\n",
+					"\r\n",
+					"# select  un-necessary columns to remove\r\n",
+					"cols_to_drop = [df.columns[0], df.columns[1], df.columns[2],df.columns[5]] \r\n",
+					"\r\n",
+					"# Drop the specified columns\r\n",
+					"df = df.drop(*cols_to_drop) \r\n",
+					"\r\n",
+					"\r\n",
+					"# convery spark df to pandas\r\n",
+					"pandas_df = df.toPandas()\r\n",
+					"\r\n",
+					"# as it is loaded from csv,Identify the columns that need to be converted to numeric\r\n",
+					"columns_to_convert = list(pandas_df.columns)[1:]\r\n",
+					"\r\n",
+					"\r\n",
+					"# Convert the specified columns to numeric\r\n",
+					"for col in columns_to_convert:\r\n",
+					"    pandas_df[col] = pd.to_numeric(pandas_df[col], errors='coerce')\r\n",
+					"\r\n",
+					"#df_transposed = pandas_df.set_index('Indicators').T\r\n",
+					"##\r\n",
+					"\r\n",
+					"pandas_df = pandas_df.set_index('Period')\r\n",
+					"\r\n",
+					"\r\n",
+					"pandas_df.plot(kind='bar', stacked=True, figsize=(12, 6))\r\n",
+					"\r\n",
+					"\r\n",
+					"# Customize plot\r\n",
+					"plt.title('Current Health Expenditure per capita USD')\r\n",
+					"plt.xlabel('Period')\r\n",
+					"plt.ylabel('CHE per capta in USD-2022')\r\n",
+					"plt.xticks(rotation=45)\r\n",
+					"plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))\r\n",
+					"\r\n",
+					"plt.show()\r\n",
+					""
+				],
+				"execution_count": 33
 			}
 		]
 	}
