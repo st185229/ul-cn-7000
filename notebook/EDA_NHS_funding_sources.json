@@ -18,7 +18,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "3b1389d0-96c8-4b45-bc59-43ad171e7950"
+				"spark.autotune.trackingId": "98abfca8-babf-46aa-a4fb-3340d7d4f5d7"
 			}
 		},
 		"metadata": {
@@ -41,7 +41,7 @@
 					"authResource": "https://dev.azuresynapse.net"
 				},
 				"sparkVersion": "3.4",
-				"nodeCount": 10,
+				"nodeCount": 3,
 				"cores": 4,
 				"memory": 28,
 				"automaticScaleJobs": false
@@ -64,7 +64,7 @@
 					"import matplotlib.pyplot as plt\r\n",
 					"\r\n",
 					"# Load the data with header\r\n",
-					"df = spark.read.option(\"header\",\"true\").csv('abfss://healthdata-fs@distributedanalytics.dfs.core.windows.net/NHA indicators (2).csv')\r\n",
+					"df = spark.read.option(\"header\",\"true\").csv('abfss://healthdata-fs@distributedanalytics.dfs.core.windows.net/data/NHAindicators.csv')\r\n",
 					"\r\n",
 					"# select  un-necessary columns to remove\r\n",
 					"cols_to_drop = [df.columns[0], df.columns[2]] \r\n",
