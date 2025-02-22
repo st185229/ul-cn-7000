@@ -18,7 +18,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "d80d3c0d-80c7-4faa-8007-9318d5bfad90"
+				"spark.autotune.trackingId": "76b6bb99-3dcc-4252-95ca-900e22bcb724"
 			}
 		},
 		"metadata": {
@@ -355,6 +355,30 @@
 					""
 				],
 				"execution_count": 33
+			},
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"## Doctors in UK"
+				]
+			},
+			{
+				"cell_type": "code",
+				"source": [
+					"%%pyspark\r\n",
+					"df = spark.sql(\"SELECT * FROM `default`.`doctorsuk`\")\r\n",
+					"\r\n",
+					"df.show(25)\r\n",
+					""
+				],
+				"execution_count": 34
 			}
 		]
 	}
