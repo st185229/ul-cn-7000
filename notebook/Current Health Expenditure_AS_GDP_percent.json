@@ -18,7 +18,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "61a3abbd-c78f-4d69-9964-94764f8734dc"
+				"spark.autotune.trackingId": "bb56106d-572a-40b5-b805-5b18c3a5eafb"
 			}
 		},
 		"metadata": {
@@ -41,7 +41,7 @@
 					"authResource": "https://dev.azuresynapse.net"
 				},
 				"sparkVersion": "3.4",
-				"nodeCount": 10,
+				"nodeCount": 3,
 				"cores": 4,
 				"memory": 28,
 				"automaticScaleJobs": false
@@ -87,10 +87,12 @@
 					"import pandas as pd\r\n",
 					"import matplotlib.pyplot as plt\r\n",
 					"\r\n",
-					"df = spark.read.load('abfss://healthdata-fs@distributedanalytics.dfs.core.windows.net/data/Current Health Expenditure (CHE) as % Gross Domestic Product (GDP).csv', format='csv'\r\n",
+					"df = spark.sql(\"SELECT * FROM `default`.`nhaindicators`\")\r\n",
+					"\r\n",
+					"#df = spark.read.load('abfss://healthdata-fs@distributedanalytics.dfs.core.windows.net/data/Current Health Expenditure (CHE) as % Gross Domestic Product (GDP).csv', format='csv'\r\n",
 					"## If header exists uncomment line below\r\n",
-					", header=True\r\n",
-					")\r\n",
+					"#, header=True\r\n",
+					"#)\r\n",
 					"\r\n",
 					"df.show(truncate=False)\r\n",
 					"\r\n",
@@ -112,7 +114,7 @@
 					"\r\n",
 					""
 				],
-				"execution_count": null
+				"execution_count": 1
 			},
 			{
 				"cell_type": "markdown",
