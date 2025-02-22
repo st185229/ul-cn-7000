@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 2",
+	"properties": {
+		"content": {
+			"query": "SELECT  [IndicatorCode]\n,[Indicator]\n,[ParentLocationCode]\n,[SpatialDimValueCode]\n,[Period type]\n,[Period]\n,[IsLatestYear]\n,[FactValueNumeric]\n,[FactComments]\n,[DateModified]\n FROM [default].[dbo].[doctorsuk]\n where [IndicatorCode] = 'HWF_0002'\n order by Period",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "default",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

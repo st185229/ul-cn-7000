@@ -18,7 +18,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "76b6bb99-3dcc-4252-95ca-900e22bcb724"
+				"spark.autotune.trackingId": "ab61a966-90bc-415b-9aa7-de1b7d47d358"
 			}
 		},
 		"metadata": {
@@ -323,6 +323,7 @@
 					"# Drop the specified columns\r\n",
 					"df = df.drop(*cols_to_drop) \r\n",
 					"\r\n",
+					"df.show(25)\r\n",
 					"\r\n",
 					"# convery spark df to pandas\r\n",
 					"pandas_df = df.toPandas()\r\n",
@@ -354,7 +355,7 @@
 					"plt.show()\r\n",
 					""
 				],
-				"execution_count": 33
+				"execution_count": 39
 			},
 			{
 				"cell_type": "markdown",
@@ -366,19 +367,55 @@
 					}
 				},
 				"source": [
-					"## Doctors in UK"
+					"## Doctors in UK - https://www.who.int/data/gho/data/indicators"
 				]
 			},
 			{
 				"cell_type": "code",
 				"source": [
 					"%%pyspark\r\n",
-					"df = spark.sql(\"SELECT * FROM `default`.`doctorsuk`\")\r\n",
+					"df = spark.sql(\"SELECT * FROM `default`.`doctorsuk` where SpatialDimValueCode = 'GBR'  and IndicatorCode = 'HWF_0002' and Period > 1990 order by Period\")\r\n",
 					"\r\n",
-					"df.show(25)\r\n",
+					"\r\n",
+					"\r\n",
+					"# select  un-necessary columns to remove\r\n",
+					"cols_to_drop = [df.columns[0], df.columns[1], df.columns[2],df.columns[3],df.columns[4],df.columns[6],df.columns[8],df.columns[9]] \r\n",
+					"\r\n",
+					"# Drop the specified columns\r\n",
+					"df = df.drop(*cols_to_drop) \r\n",
+					"\r\n",
+					"df.show(100)\r\n",
+					"\r\n",
+					"# convery spark df to pandas\r\n",
+					"pandas_df = df.toPandas()\r\n",
+					"\r\n",
+					"# as it is loaded from csv,Identify the columns that need to be converted to numeric\r\n",
+					"columns_to_convert = list(pandas_df.columns)[1:]\r\n",
+					"\r\n",
+					"\r\n",
+					"# Convert the specified columns to numeric\r\n",
+					"for col in columns_to_convert:\r\n",
+					"    pandas_df[col] = pd.to_numeric(pandas_df[col], errors='coerce')\r\n",
+					"\r\n",
+					"#df_transposed = pandas_df.set_index('Indicators').T\r\n",
+					"##\r\n",
+					"\r\n",
+					"pandas_df = pandas_df.set_index('Period')\r\n",
+					"\r\n",
+					"pandas_df.plot(kind='bar', stacked=True, figsize=(12, 6))\r\n",
+					"\r\n",
+					"\r\n",
+					"# Customize plot\r\n",
+					"plt.title('Number of medics per 10,000 population')\r\n",
+					"plt.xlabel('Period')\r\n",
+					"plt.ylabel('Number of doctors')\r\n",
+					"plt.xticks(rotation=45)\r\n",
+					"plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))\r\n",
+					"\r\n",
+					"plt.show()\r\n",
 					""
 				],
-				"execution_count": 34
+				"execution_count": 45
 			}
 		]
 	}
