@@ -18,7 +18,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "b86244cc-d5eb-446a-849b-26bcd4b73dd0"
+				"spark.autotune.trackingId": "2b02ebde-4558-48e5-8568-7ce9b0332977"
 			}
 		},
 		"metadata": {
@@ -205,8 +205,6 @@
 					"import pandas as pd\r\n",
 					"import matplotlib.pyplot as plt\r\n",
 					"\r\n",
-					"# Load the data with header\r\n",
-					"#df = spark.read.option(\"header\",\"true\").csv('abfss://healthdata-fs@distributedanalytics.dfs.core.windows.net/data/NHAindicators.csv')\r\n",
 					"\r\n",
 					"df = spark.sql(\"SELECT * FROM `default`.`nhaindicators`\")\r\n",
 					"\r\n",
@@ -243,6 +241,28 @@
 					""
 				],
 				"execution_count": 3
+			},
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"CHE - Current Health Expenses as percentage of GDP"
+				]
+			},
+			{
+				"cell_type": "code",
+				"source": [
+					"%%pyspark\r\n",
+					"df = spark.sql(\"SELECT * FROM `default`.`cheaspercentgdp`\")\r\n",
+					"df.show(10)"
+				],
+				"execution_count": 6
 			}
 		]
 	}
