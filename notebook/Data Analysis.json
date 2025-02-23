@@ -18,7 +18,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "ab61a966-90bc-415b-9aa7-de1b7d47d358"
+				"spark.autotune.trackingId": "59c042cf-2870-4906-bef2-3ad54b297d64"
 			}
 		},
 		"metadata": {
@@ -374,7 +374,7 @@
 				"cell_type": "code",
 				"source": [
 					"%%pyspark\r\n",
-					"df = spark.sql(\"SELECT * FROM `default`.`doctorsuk` where SpatialDimValueCode = 'GBR'  and IndicatorCode = 'HWF_0002' and Period > 1990 order by Period\")\r\n",
+					"df = spark.sql(\"SELECT * FROM `default`.`doctorsuk` where SpatialDimValueCode = 'GBR'  and IndicatorCode = 'HWF_0002' and Period > 1999 order by Period\")\r\n",
 					"\r\n",
 					"\r\n",
 					"\r\n",
@@ -415,7 +415,29 @@
 					"plt.show()\r\n",
 					""
 				],
-				"execution_count": 45
+				"execution_count": 46
+			},
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"## General government expenditure (GGE)-In million constant (2022) US$"
+				]
+			},
+			{
+				"cell_type": "code",
+				"source": [
+					"%%pyspark\r\n",
+					"df = spark.sql(\"SELECT * FROM `default`.`gceinmillionconstant2022usd`\")\r\n",
+					"df.show(10)"
+				],
+				"execution_count": 47
 			}
 		]
 	}
