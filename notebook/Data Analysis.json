@@ -18,7 +18,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "c055bdb1-a237-4317-bfad-84c633704e01"
+				"spark.autotune.trackingId": "67743856-1d66-4d7f-997d-dc61871d26ca"
 			}
 		},
 		"metadata": {
@@ -586,6 +586,28 @@
 					"plt.show()"
 				],
 				"execution_count": 22
+			},
+			{
+				"cell_type": "code",
+				"source": [
+					"%%pyspark\r\n",
+					"df = spark.sql(\"SELECT * FROM `default`.`phcexpendituretrends`\")\r\n",
+					"df.show(10)"
+				],
+				"execution_count": 23
+			},
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					""
+				]
 			}
 		]
 	}
