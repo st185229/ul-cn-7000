@@ -18,7 +18,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "0d25fc7b-291f-4187-9ada-5584084a059a"
+				"spark.autotune.trackingId": "325b636d-4146-4158-b33d-4b970e1c9362"
 			}
 		},
 		"metadata": {
@@ -509,20 +509,14 @@
 					"# as it is loaded from csv,Identify the columns that need to be converted to numeric\r\n",
 					"columns_to_convert = list(pandas_df.columns)[1:]\r\n",
 					"\r\n",
-					"\r\n",
 					"# Convert the specified columns to numeric\r\n",
 					"for col in columns_to_convert:\r\n",
 					"    pandas_df[col] = pd.to_numeric(pandas_df[col], errors='coerce')\r\n",
 					"\r\n",
 					"pandas_df = pandas_df.rename(columns={'Indicator Code': 'Year'})\r\n",
 					"\r\n",
-					"\r\n",
 					"df_transposed = pandas_df.set_index('Year').T\r\n",
 					"\r\n",
-					"display(df_transposed)\r\n",
-					"\r\n",
-					"#spark_df = spark.createDataFrame(df_transposed)\r\n",
-					"#spark_df.show()\r\n",
 					"\r\n",
 					"df_transposed.plot(kind='bar', stacked=True, figsize=(12, 6))\r\n",
 					"\r\n",
@@ -538,7 +532,7 @@
 					"\r\n",
 					""
 				],
-				"execution_count": 65
+				"execution_count": 70
 			}
 		]
 	}
