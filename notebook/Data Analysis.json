@@ -18,7 +18,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "325b636d-4146-4158-b33d-4b970e1c9362"
+				"spark.autotune.trackingId": "900589d8-7484-4712-8331-a63dbf782741"
 			}
 		},
 		"metadata": {
@@ -533,6 +533,35 @@
 					""
 				],
 				"execution_count": 70
+			},
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"## Life expectancy at 60 based on male, female and both sex"
+				]
+			},
+			{
+				"cell_type": "code",
+				"source": [
+					"%%pyspark\r\n",
+					"df = spark.sql(\"SELECT * FROM `default`.`lifeexpectancybirthand60` where `Country Code` = 'GBR' and FactValueNumeric >= 60\")\r\n",
+					"\r\n",
+					"# select  un-necessary columns to remove\r\n",
+					"cols_to_drop = [df.columns[0], df.columns[1], df.columns[3], df.columns[4]] \r\n",
+					"\r\n",
+					"# Drop the specified columns\r\n",
+					"df = df.drop(*cols_to_drop) \r\n",
+					"\r\n",
+					"df.show(10)"
+				],
+				"execution_count": 76
 			}
 		]
 	}
