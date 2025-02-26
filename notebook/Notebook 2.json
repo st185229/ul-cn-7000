@@ -1,5 +1,5 @@
 {
-	"name": "Notebook 1",
+	"name": "Notebook 2",
 	"properties": {
 		"nbformat": 4,
 		"nbformat_minor": 2,
@@ -13,7 +13,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "d64315ff-3746-4c28-9a0c-dede8625bcbb"
+				"spark.autotune.trackingId": "d6db82ec-bec6-43c7-b014-52b88f3add15"
 			}
 		},
 		"metadata": {
@@ -33,8 +33,8 @@
 				"cell_type": "code",
 				"source": [
 					"%%pyspark\n",
-					"df = spark.sql(\"SELECT * FROM `default`.`lifeexpectancybirthand60`\")\n",
-					"df.show(10)"
+					"df = spark.sql(\"SELECT * FROM `default`.`lifeexpetancyatbirth`\")\n",
+					"# df.show(10)"
 				],
 				"execution_count": null
 			}
