@@ -18,7 +18,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "57702197-e95b-4021-b709-e55db86a2357"
+				"spark.autotune.trackingId": "1fb40f69-01fd-435f-a8c3-40d563eec824"
 			}
 		},
 		"metadata": {
@@ -752,7 +752,9 @@
 				"source": [
 					"%%pyspark\r\n",
 					"df = spark.sql(\"SELECT * FROM `default`.`ukpopulationbyageons`\")\r\n",
-					"df.show(10)"
+					"df.show(10)\r\n",
+					"\r\n",
+					""
 				],
 				"execution_count": 64
 			}
