@@ -1,0 +1,22 @@
+{
+	"name": "warehouse",
+	"properties": {
+		"Name": "warehouse",
+		"EntityType": "DATABASE",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"Properties": {
+			"IsSyMSCDMDatabase": true
+		},
+		"Source": {
+			"Provider": "ADLS",
+			"Location": "abfss://healthdata-fs@distributedanalytics.dfs.core.windows.net/warehouse",
+			"Properties": {
+				"FormatType": "csv",
+				"LinkedServiceName": "healthdataws-WorkspaceDefaultStorage"
+			}
+		}
+	},
+	"type": "DATABASE"
+}
