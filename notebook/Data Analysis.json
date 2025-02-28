@@ -18,7 +18,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "3b0c729a-2adc-434a-9797-2bd65b9abd9d"
+				"spark.autotune.trackingId": "b7b1b5cc-f540-431b-af1f-85f1ba2478f0"
 			}
 		},
 		"metadata": {
@@ -619,13 +619,12 @@
 					"# Transpose the DataFrame\r\n",
 					"transposed_df = df.select(\"Countries\", F.expr(stack_expr)).where(\"Value is not null\")\r\n",
 					"\r\n",
-					"# Rename the \"Year\" column\r\n",
-					"transposed_df = transposed_df.withColumnRenamed(\"Countries\", \"Category\")\r\n",
+					"transposed_df = transposed_df.drop([df.columns[1]] ) \r\n",
 					"\r\n",
 					"transposed_df.show(10)\r\n",
 					""
 				],
-				"execution_count": 10
+				"execution_count": 17
 			},
 			{
 				"cell_type": "markdown",
