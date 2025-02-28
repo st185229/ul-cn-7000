@@ -18,7 +18,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "5a4e7952-4668-4366-855c-f8b85d6aac77"
+				"spark.autotune.trackingId": "efd3ab33-f2f5-4b1f-ab53-de597f3cf36d"
 			}
 		},
 		"metadata": {
@@ -752,11 +752,33 @@
 				"source": [
 					"%%pyspark\r\n",
 					"df = spark.sql(\"SELECT * FROM `default`.`ukpopulationbyageons`\")\r\n",
-					"df.show(10)\r\n",
+					"df.show(1)\r\n",
 					"\r\n",
 					""
 				],
-				"execution_count": 1
+				"execution_count": 2
+			},
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"## World health data"
+				]
+			},
+			{
+				"cell_type": "code",
+				"source": [
+					"%%pyspark\r\n",
+					"df = spark.sql('SELECT * FROM `default`.`worldhealthdata` where country_code = \"GBR\"')\r\n",
+					"df.show(10)"
+				],
+				"execution_count": 5
 			}
 		]
 	}
