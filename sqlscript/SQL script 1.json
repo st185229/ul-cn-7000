@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 1",
+	"properties": {
+		"content": {
+			"query": "SELECT TOP (100) [Countries]\n,[Indicators]\n,[2016]\n,[2017]\n,[2018]\n,[2019]\n,[2020]\n,[2021]\n,[2022]\n,[2023]\n FROM [default].[dbo].[phcexpendituretrends]",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "default",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
