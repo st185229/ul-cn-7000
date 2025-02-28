@@ -18,7 +18,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "67743856-1d66-4d7f-997d-dc61871d26ca"
+				"spark.autotune.trackingId": "e8325e8c-6fbe-4e41-97be-82ab01195f1e"
 			}
 		},
 		"metadata": {
@@ -591,10 +591,16 @@
 				"cell_type": "code",
 				"source": [
 					"%%pyspark\r\n",
-					"df = spark.sql(\"SELECT * FROM `default`.`phcexpendituretrends`\")\r\n",
-					"df.show(10)"
+					"df = spark.sql('SELECT * FROM `default`.`phcexpendituretrends` where Countries like \"%United%\"')\r\n",
+					"df.show(10)\r\n",
+					"# select  un-necessary columns to remove\r\n",
+					"cols_to_drop = [df.columns[1]] \r\n",
+					"# Drop the specified columns\r\n",
+					"df = df.drop(*cols_to_drop) \r\n",
+					"df.show(10)\r\n",
+					""
 				],
-				"execution_count": 23
+				"execution_count": 5
 			},
 			{
 				"cell_type": "markdown",
