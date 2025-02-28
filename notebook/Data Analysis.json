@@ -18,7 +18,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "52097db2-0eec-4ab8-bb10-656374bb008d"
+				"spark.autotune.trackingId": "57702197-e95b-4021-b709-e55db86a2357"
 			}
 		},
 		"metadata": {
@@ -120,7 +120,7 @@
 					"\r\n",
 					""
 				],
-				"execution_count": 32
+				"execution_count": 48
 			},
 			{
 				"cell_type": "markdown",
@@ -182,7 +182,7 @@
 					"\r\n",
 					"plt.show()"
 				],
-				"execution_count": 33
+				"execution_count": 49
 			},
 			{
 				"cell_type": "markdown",
@@ -240,7 +240,7 @@
 					"plt.show()\r\n",
 					""
 				],
-				"execution_count": 34
+				"execution_count": 50
 			},
 			{
 				"cell_type": "markdown",
@@ -290,7 +290,7 @@
 					"plt.show()\r\n",
 					""
 				],
-				"execution_count": 35
+				"execution_count": 51
 			},
 			{
 				"cell_type": "markdown",
@@ -355,7 +355,7 @@
 					"plt.show()\r\n",
 					""
 				],
-				"execution_count": 36
+				"execution_count": 52
 			},
 			{
 				"cell_type": "markdown",
@@ -415,7 +415,7 @@
 					"plt.show()\r\n",
 					""
 				],
-				"execution_count": 37
+				"execution_count": 53
 			},
 			{
 				"cell_type": "markdown",
@@ -469,7 +469,7 @@
 					"\r\n",
 					"plt.show()"
 				],
-				"execution_count": 38
+				"execution_count": 54
 			},
 			{
 				"cell_type": "markdown",
@@ -532,7 +532,7 @@
 					"\r\n",
 					""
 				],
-				"execution_count": 39
+				"execution_count": 55
 			},
 			{
 				"cell_type": "markdown",
@@ -585,7 +585,33 @@
 					"\r\n",
 					"plt.show()"
 				],
-				"execution_count": 40
+				"execution_count": 56
+			},
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					""
+				]
+			},
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"## UK Primary Health Expenses"
+				]
 			},
 			{
 				"cell_type": "code",
@@ -624,7 +650,89 @@
 					"transposed_df.show(10)\r\n",
 					""
 				],
-				"execution_count": 41
+				"execution_count": 57
+			},
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"## UK GDP price index (100 in 2022)"
+				]
+			},
+			{
+				"cell_type": "code",
+				"source": [
+					"%%pyspark\r\n",
+					"df = spark.sql(\"SELECT * FROM `default`.`ukgdppriceindex2022is100` order by Indicators\")\r\n",
+					"df.show(10)\r\n",
+					"\r\n",
+					"# Get the year columns dynamically\r\n",
+					"year_columns = [col for col in df.columns if col != \"Indicators\"]\r\n",
+					"\r\n",
+					"# Create the stack expression dynamically\r\n",
+					"stack_expr = \"stack(\" + str(len(year_columns)) + \", \"\r\n",
+					"\r\n",
+					"for year_col in year_columns:\r\n",
+					"    stack_expr += f\"'{year_col}', `{year_col}`, \"\r\n",
+					"stack_expr = stack_expr[:-2] + \") as (Year, Value)\" #Remove trailing comma and space and close stack expression\r\n",
+					"\r\n",
+					"# Transpose the DataFrame\r\n",
+					"transposed_df = df.select(\"Indicators\", F.expr(stack_expr)).where(\"Value is not null\")\r\n",
+					"\r\n",
+					"# Rename the \"Year\" column\r\n",
+					"transposed_df = transposed_df.withColumnRenamed(\"CouIndicatorsntries\", \"Category\")\r\n",
+					"\r\n",
+					"# Transpose the DataFrame\r\n",
+					"transposed_df = df.select(\"Indicators\", F.expr(stack_expr)).where(\"Value is not null\")\r\n",
+					"\r\n",
+					"transposed_df = transposed_df.drop(*[transposed_df.columns[0]] ) \r\n",
+					"\r\n",
+					"transposed_df.show(24)\r\n",
+					""
+				],
+				"execution_count": 58
+			},
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"## UK NET Migration"
+				]
+			},
+			{
+				"cell_type": "code",
+				"source": [
+					"%%pyspark\r\n",
+					"df = spark.sql(\"SELECT * FROM `default`.`uknetmigration` where Time > 1999\")\r\n",
+					"df = df.drop(*[df.columns[0]] ) \r\n",
+					"df.show(24)"
+				],
+				"execution_count": 63
+			},
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"## UK population by age"
+				]
 			},
 			{
 				"cell_type": "markdown",
@@ -638,6 +746,15 @@
 				"source": [
 					""
 				]
+			},
+			{
+				"cell_type": "code",
+				"source": [
+					"%%pyspark\r\n",
+					"df = spark.sql(\"SELECT * FROM `default`.`ukpopulationbyageons`\")\r\n",
+					"df.show(10)"
+				],
+				"execution_count": 64
 			}
 		]
 	}
