@@ -18,7 +18,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "b7b1b5cc-f540-431b-af1f-85f1ba2478f0"
+				"spark.autotune.trackingId": "52097db2-0eec-4ab8-bb10-656374bb008d"
 			}
 		},
 		"metadata": {
@@ -120,7 +120,7 @@
 					"\r\n",
 					""
 				],
-				"execution_count": 31
+				"execution_count": 32
 			},
 			{
 				"cell_type": "markdown",
@@ -182,7 +182,7 @@
 					"\r\n",
 					"plt.show()"
 				],
-				"execution_count": 32
+				"execution_count": 33
 			},
 			{
 				"cell_type": "markdown",
@@ -240,7 +240,7 @@
 					"plt.show()\r\n",
 					""
 				],
-				"execution_count": 33
+				"execution_count": 34
 			},
 			{
 				"cell_type": "markdown",
@@ -290,7 +290,7 @@
 					"plt.show()\r\n",
 					""
 				],
-				"execution_count": 34
+				"execution_count": 35
 			},
 			{
 				"cell_type": "markdown",
@@ -355,7 +355,7 @@
 					"plt.show()\r\n",
 					""
 				],
-				"execution_count": 35
+				"execution_count": 36
 			},
 			{
 				"cell_type": "markdown",
@@ -415,7 +415,7 @@
 					"plt.show()\r\n",
 					""
 				],
-				"execution_count": 36
+				"execution_count": 37
 			},
 			{
 				"cell_type": "markdown",
@@ -469,7 +469,7 @@
 					"\r\n",
 					"plt.show()"
 				],
-				"execution_count": 37
+				"execution_count": 38
 			},
 			{
 				"cell_type": "markdown",
@@ -532,7 +532,7 @@
 					"\r\n",
 					""
 				],
-				"execution_count": 70
+				"execution_count": 39
 			},
 			{
 				"cell_type": "markdown",
@@ -585,7 +585,7 @@
 					"\r\n",
 					"plt.show()"
 				],
-				"execution_count": 22
+				"execution_count": 40
 			},
 			{
 				"cell_type": "code",
@@ -619,12 +619,12 @@
 					"# Transpose the DataFrame\r\n",
 					"transposed_df = df.select(\"Countries\", F.expr(stack_expr)).where(\"Value is not null\")\r\n",
 					"\r\n",
-					"transposed_df = transposed_df.drop([df.columns[1]] ) \r\n",
+					"transposed_df = transposed_df.drop(*[transposed_df.columns[0]] ) \r\n",
 					"\r\n",
 					"transposed_df.show(10)\r\n",
 					""
 				],
-				"execution_count": 17
+				"execution_count": 41
 			},
 			{
 				"cell_type": "markdown",
