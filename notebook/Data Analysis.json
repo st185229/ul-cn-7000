@@ -18,7 +18,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "efd3ab33-f2f5-4b1f-ab53-de597f3cf36d"
+				"spark.autotune.trackingId": "e49ab131-146a-4ff8-8152-5149c8c38ebe"
 			}
 		},
 		"metadata": {
@@ -756,7 +756,7 @@
 					"\r\n",
 					""
 				],
-				"execution_count": 2
+				"execution_count": 8
 			},
 			{
 				"cell_type": "markdown",
@@ -775,10 +775,26 @@
 				"cell_type": "code",
 				"source": [
 					"%%pyspark\r\n",
-					"df = spark.sql('SELECT * FROM `default`.`worldhealthdata` where country_code = \"GBR\"')\r\n",
-					"df.show(10)"
+					"resultDF = spark.sql('SELECT year,health_exp as health_exp_percentage_gdp,life_expect, maternal_mortality,infant_mortality,neonatal_mortality, under_5_mortality   FROM `default`.`worldhealthdata` where country_code = \"GBR\" and year > 1999 and  year < 2023')\r\n",
+					"resultDF.show(24)\r\n",
+					"\r\n",
+					"schema_name = 'warehouse'\r\n",
+					"table_name = 'uk_health_data'\r\n",
+					"\r\n",
+					"spark_sql_schema_Create = f\"CREATE SCHEMA IF NOT EXISTS {schema_name};\"\r\n",
+					"spark.sql(spark_sql_schema_Create)\r\n",
+					"\r\n",
+					"resultDF.write.format(\"delta\").mode(\"ignore\").saveAsTable(f\"{schema_name}.{table_name}\")"
 				],
-				"execution_count": 5
+				"execution_count": 25
+			},
+			{
+				"cell_type": "code",
+				"source": [
+					"df = spark.sql(\"SHOW schemas;\")\r\n",
+					"df.show()"
+				],
+				"execution_count": 23
 			}
 		]
 	}
