@@ -18,7 +18,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "e49ab131-146a-4ff8-8152-5149c8c38ebe"
+				"spark.autotune.trackingId": "88638438-8e1f-4a24-98d8-02dbed626cb9"
 			}
 		},
 		"metadata": {
@@ -786,7 +786,7 @@
 					"\r\n",
 					"resultDF.write.format(\"delta\").mode(\"ignore\").saveAsTable(f\"{schema_name}.{table_name}\")"
 				],
-				"execution_count": 25
+				"execution_count": 26
 			},
 			{
 				"cell_type": "code",

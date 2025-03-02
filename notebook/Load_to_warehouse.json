@@ -1,5 +1,5 @@
 {
-	"name": "Notebook 1",
+	"name": "Load_to_warehouse",
 	"properties": {
 		"nbformat": 4,
 		"nbformat_minor": 2,
@@ -13,7 +13,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "e6058d61-d32f-499d-9a51-0399e68aabb5"
+				"spark.autotune.trackingId": "584b87a6-41a7-40d5-b663-323c86a032a9"
 			}
 		},
 		"metadata": {
@@ -33,8 +33,16 @@
 				"cell_type": "code",
 				"source": [
 					"%%pyspark\n",
-					"df = spark.sql(\"SELECT * FROM `default`.`uknetmigration`\")\n",
-					"# df.show(10)"
+					"resultDF = spark.sql('SELECT year,health_exp as health_exp_percentage_gdp,life_expect, maternal_mortality,infant_mortality,neonatal_mortality, under_5_mortality   FROM `default`.`worldhealthdata` where country_code = \"GBR\" and year > 1999 and  year < 2023')\n",
+					"resultDF.show(24)\n",
+					"\n",
+					"schema_name = 'warehouse'\n",
+					"table_name = 'uk_health_data'\n",
+					"\n",
+					"spark_sql_schema_Create = f\"CREATE SCHEMA IF NOT EXISTS {schema_name};\"\n",
+					"spark.sql(spark_sql_schema_Create)\n",
+					"\n",
+					"resultDF.write.format(\"delta\").mode(\"ignore\").saveAsTable(f\"{schema_name}.{table_name}\")"
 				],
 				"execution_count": null
 			}
