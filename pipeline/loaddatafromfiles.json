@@ -87,7 +87,7 @@
 							"userProperties": [],
 							"typeProperties": {
 								"notebook": {
-									"referenceName": "LoadtoStaging",
+									"referenceName": "Load_to_staging",
 									"type": "NotebookReference"
 								},
 								"snapshot": true,
