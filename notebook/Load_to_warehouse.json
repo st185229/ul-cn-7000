@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "4fabe1f1-77db-4610-bbf9-c53a665b7080"
+				"spark.autotune.trackingId": "9d748629-e946-40a4-8471-4baed4099963"
 			}
 		},
 		"metadata": {
@@ -95,13 +95,13 @@
 					"\n",
 					"\n",
 					"# Forecasting function\n",
-					"def forecast_column(pdf, column_name, forecast_years=3):\n",
+					"def forecast_column(pdf, column_name, forecast_years=5):\n",
 					"    pdf = pdf.sort_values(by=\"year\")\n",
 					"    time_series = pd.Series(pdf[column_name].values, index=pd.to_datetime(pdf[\"year\"], format='%Y'))\n",
 					"    time_series.index.freq = 'YS' #Set the frequency after creation\n",
 					"\n",
 					"    try:\n",
-					"        model = sm.tsa.ARIMA(time_series, order=(1, 1, 1)) # Example order\n",
+					"        model = sm.tsa.ARIMA(time_series, order=(1, 1, 0)) # Example order\n",
 					"        model_fit = model.fit()\n",
 					"        forecast = model_fit.forecast(steps=forecast_years)\n",
 					"        forecast_df = pd.DataFrame({\"year\": forecast.index.year, f\"{column_name}_forecast\": forecast.values})\n",
@@ -112,7 +112,7 @@
 					"\n",
 					"# Forecast each column\n",
 					"forecast_results = None\n",
-					"forecast_years = 3\n",
+					"forecast_years = 5\n",
 					"start_year = df.agg(F.max(\"year\")).collect()[0][0] + 1\n",
 					"forecast_years_range = range(start_year, start_year + forecast_years)\n",
 					"\n",
@@ -131,7 +131,7 @@
 					"    forecast_spark_df = spark.createDataFrame(forecast_results)\n",
 					"    forecast_spark_df.show()"
 				],
-				"execution_count": 18
+				"execution_count": 21
 			}
 		]
 	}
