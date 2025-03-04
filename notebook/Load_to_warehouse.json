@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "a5d703a7-a2d5-468d-a097-849fd4f684c5"
+				"spark.autotune.trackingId": "66311fb4-dff3-4845-b7bd-0ff967ef9f89"
 			}
 		},
 		"metadata": {
@@ -61,8 +61,9 @@
 					"\n",
 					"schema_name = 'warehouse'\n",
 					"table_name = 'uk_health_data'\n",
+					"table_name_forecast = 'uk_health_data_forecast'\n",
 					"# Read from staging\n",
-					"resultDF = spark.sql('SELECT year,health_exp as health_exp_percentage_gdp,life_expect, maternal_mortality,infant_mortality,neonatal_mortality, under_5_mortality   FROM `default`.`worldhealthdata` where country_code = \"GBR\" and year > 1999 and  year < 2023')\n",
+					"resultDF = spark.sql('SELECT year,health_exp as health_exp_percentage_gdp,life_expect, maternal_mortality,infant_mortality,neonatal_mortality, under_5_mortality   FROM `default`.`worldhealthdata` where country_code = \"GBR\"')\n",
 					"\n",
 					"# Create schema if does not exists \n",
 					"spark_sql_schema_Create = f\"CREATE SCHEMA IF NOT EXISTS {schema_name};\"\n",
@@ -91,6 +92,8 @@
 					"\n",
 					"\n",
 					"df.show(24)\n",
+					"\n",
+					"#resultDF.write.format(\"delta\").mode(\"ignore\").saveAsTable(f\"{schema_name}.{table_name_appended}\")\n",
 					"\n",
 					"\n",
 					"\n",
@@ -129,9 +132,11 @@
 					"# Convert back to PySpark DataFrame\n",
 					"if forecast_results is not None:\n",
 					"    forecast_spark_df = spark.createDataFrame(forecast_results)\n",
-					"    forecast_spark_df.show()"
+					"    forecast_spark_df.show()\n",
+					"\n",
+					"forecast_spark_df.write.format(\"delta\").mode(\"ignore\").saveAsTable(f\"{schema_name}.{table_name_forecast}\")"
 				],
-				"execution_count": 21
+				"execution_count": 9
 			},
 			{
 				"cell_type": "code",
