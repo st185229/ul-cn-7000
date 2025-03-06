@@ -3,6 +3,10 @@
 	"properties": {
 		"nbformat": 4,
 		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "ghparkcluster",
+			"type": "BigDataPoolReference"
+		},
 		"sessionProperties": {
 			"driverMemory": "28g",
 			"driverCores": 4,
@@ -13,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "235809ef-1b8d-492a-8af6-e35254b30013"
+				"spark.autotune.trackingId": "52f4fa95-e5f5-4439-a4d8-67024a3670e9"
 			}
 		},
 		"metadata": {
@@ -21,10 +25,25 @@
 			"enableDebugMode": false,
 			"kernelspec": {
 				"name": "synapse_pyspark",
-				"display_name": "python"
+				"display_name": "Synapse PySpark"
 			},
 			"language_info": {
 				"name": "python"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/56fbbfce-6dab-4d62-af16-ccd107f4d9d3/resourceGroups/DEV-EA-EASTUS-DF-RG/providers/Microsoft.Synapse/workspaces/healthdataws/bigDataPools/ghparkcluster",
+				"name": "ghparkcluster",
+				"type": "Spark",
+				"endpoint": "https://healthdataws.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/ghparkcluster",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net"
+				},
+				"sparkVersion": "3.4",
+				"nodeCount": 3,
+				"cores": 4,
+				"memory": 28,
+				"automaticScaleJobs": false
 			},
 			"sessionKeepAliveTimeout": 30
 		},
@@ -93,7 +112,7 @@
 					"    time_series.index.freq = 'YS' #Set the frequency after creation\n",
 					"\n",
 					"    try:\n",
-					"        model = sm.tsa.ARIMA(time_series, order=(1, 1, 0)) # Example order\n",
+					"        model = sm.tsa.ARIMA(time_series, order=(1, 1, 1)) # Example order\n",
 					"        model_fit = model.fit()\n",
 					"        forecast = model_fit.forecast(steps=forecast_years)\n",
 					"        forecast_df = pd.DataFrame({\"year\": forecast.index.year, f\"{column_name}_forecast\": forecast.values})\n",
@@ -125,7 +144,7 @@
 					"\n",
 					"forecast_spark_df.write.format(\"delta\").mode(\"ignore\").saveAsTable(f\"{schema_name}.{table_name_forecast}\")"
 				],
-				"execution_count": null
+				"execution_count": 4
 			},
 			{
 				"cell_type": "markdown",
@@ -287,7 +306,7 @@
 					"    for year, prediction in forecast_data:\n",
 					"        print(f\"  Year: {year}, Prediction: {prediction}\")"
 				],
-				"execution_count": null
+				"execution_count": 8
 			}
 		]
 	}

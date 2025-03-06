@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "c24e4a0e-2adc-4666-9cbf-73afc31f07b8"
+				"spark.autotune.trackingId": "86229a2e-8d8e-4002-82e4-2584a8fb3e71"
 			}
 		},
 		"metadata": {
@@ -108,7 +108,37 @@
 					"df.show(24)\n",
 					""
 				],
-				"execution_count": 9
+				"execution_count": 18
+			},
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"## Delete table"
+				]
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"microsoft": {
+						"language": "python"
+					}
+				},
+				"source": [
+					"%%pyspark\n",
+					"\n",
+					"\n",
+					"spark.sql(f\"DROP TABLE IF EXISTS `warehouse`.`uk_health_data_forecast_ml`\")\n",
+					"\n",
+					""
+				],
+				"execution_count": 17
 			}
 		]
 	}
