@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "52f4fa95-e5f5-4439-a4d8-67024a3670e9"
+				"spark.autotune.trackingId": "da86858c-f777-441d-84ec-66141f296219"
 			}
 		},
 		"metadata": {
@@ -186,18 +186,6 @@
 					"# Fill null values for forecasting (simplest approach, consider more sophisticated methods)\n",
 					"columns = [\"year\", \"health_exp_percentage_gdp\", \"life_expect\", \"maternal_mortality\", \"infant_mortality\", \"neonatal_mortality\", \"under_5_mortality\"]\n",
 					"\n",
-					"# Convert 'year' column to integer\n",
-					"df = df.withColumn(\"year\", df[\"year\"].cast(IntegerType()))\n",
-					"\n",
-					"# Convert all other columns to double\n",
-					"for col in columns[1:]:\n",
-					"    df = df.withColumn(col, F.col(col).cast(DoubleType()))\n",
-					"\n",
-					"# Fill null values using window function\n",
-					"for col in columns[1:]:\n",
-					"    window_spec = Window.orderBy(\"year\").rowsBetween(Window.unboundedPreceding, Window.currentRow)\n",
-					"    df = df.withColumn(col, F.last(F.col(col), ignorenulls=True).over(window_spec))\n",
-					"\n",
 					"\n",
 					"# Feature Engineering (Lagged Features)\n",
 					"lag_window = Window.orderBy(\"year\")\n",
@@ -306,7 +294,7 @@
 					"    for year, prediction in forecast_data:\n",
 					"        print(f\"  Year: {year}, Prediction: {prediction}\")"
 				],
-				"execution_count": 8
+				"execution_count": 1
 			}
 		]
 	}
