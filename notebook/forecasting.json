@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "da86858c-f777-441d-84ec-66141f296219"
+				"spark.autotune.trackingId": "53449c69-5e09-439d-8cdf-9cf10eb2f0c9"
 			}
 		},
 		"metadata": {
@@ -183,6 +183,8 @@
 					"# Select data \n",
 					"df = spark.sql(\"SELECT * FROM `warehouse`.`uk_health_data`\")\n",
 					"\n",
+					"df.show(24)\n",
+					"\n",
 					"# Fill null values for forecasting (simplest approach, consider more sophisticated methods)\n",
 					"columns = [\"year\", \"health_exp_percentage_gdp\", \"life_expect\", \"maternal_mortality\", \"infant_mortality\", \"neonatal_mortality\", \"under_5_mortality\"]\n",
 					"\n",
@@ -294,7 +296,75 @@
 					"    for year, prediction in forecast_data:\n",
 					"        print(f\"  Year: {year}, Prediction: {prediction}\")"
 				],
-				"execution_count": 1
+				"execution_count": 3
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"microsoft": {
+						"language": "python"
+					}
+				},
+				"source": [
+					"%%pyspark\n",
+					"\n",
+					"import pandas as pd\n",
+					"from sklearn.linear_model import LinearRegression\n",
+					"import numpy as np\n",
+					"\n",
+					"\n",
+					"df1 = spark.sql(\"SELECT * FROM `warehouse`.`uk_health_data`\")\n",
+					"\n",
+					"df1.show()\n",
+					"\n",
+					"# Load data from the Spark SQL table\n",
+					"df = df1.toPandas()\n",
+					"\n",
+					"print(df)\n",
+					"\n",
+					"# Fill missing values with the mean of the column\n",
+					"df = df.fillna(df.mean())\n",
+					"\n",
+					"# Features and target variables\n",
+					"X = df[['year']]\n",
+					"y_health_exp = df['health_exp_percentage_gdp']\n",
+					"y_life_expect = df['life_expect']\n",
+					"y_maternal_mortality = df['maternal_mortality']\n",
+					"y_infant_mortality = df['infant_mortality']\n",
+					"y_neonatal_mortality = df['neonatal_mortality']\n",
+					"y_under_5_mortality = df['under_5_mortality']\n",
+					"\n",
+					"# Create and train the model for each target variable\n",
+					"model_health_exp = LinearRegression().fit(X, y_health_exp)\n",
+					"model_life_expect = LinearRegression().fit(X, y_life_expect)\n",
+					"model_maternal_mortality = LinearRegression().fit(X, y_maternal_mortality)\n",
+					"model_infant_mortality = LinearRegression().fit(X, y_infant_mortality)\n",
+					"model_neonatal_mortality = LinearRegression().fit(X, y_neonatal_mortality)\n",
+					"model_under_5_mortality = LinearRegression().fit(X, y_under_5_mortality)\n",
+					"\n",
+					"# Predict for the next five years\n",
+					"future_years = np.array([[2023], [2024], [2025], [2026], [2027]])\n",
+					"\n",
+					"pred_health_exp = model_health_exp.predict(future_years)\n",
+					"pred_life_expect = model_life_expect.predict(future_years)\n",
+					"pred_maternal_mortality = model_maternal_mortality.predict(future_years)\n",
+					"pred_infant_mortality = model_infant_mortality.predict(future_years)\n",
+					"pred_neonatal_mortality = model_neonatal_mortality.predict(future_years)\n",
+					"pred_under_5_mortality = model_under_5_mortality.predict(future_years)\n",
+					"\n",
+					"# Print predictions\n",
+					"for i in range(len(future_years)):\n",
+					"    print(f\"Year: {future_years[i][0]}\")\n",
+					"    print(f\"Health Expenditure (% GDP): {pred_health_exp[i]}\")\n",
+					"    print(f\"Life Expectancy: {pred_life_expect[i]}\")\n",
+					"    print(f\"Maternal Mortality: {pred_maternal_mortality[i]}\")\n",
+					"    print(f\"Infant Mortality: {pred_infant_mortality[i]}\")\n",
+					"    print(f\"Neonatal Mortality: {pred_neonatal_mortality[i]}\")\n",
+					"    print(f\"Under-5 Mortality: {pred_under_5_mortality[i]}\")\n",
+					"    print(\"\\n\")\n",
+					""
+				],
+				"execution_count": 9
 			}
 		]
 	}
