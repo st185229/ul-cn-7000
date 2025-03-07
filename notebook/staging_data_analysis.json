@@ -18,7 +18,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "88638438-8e1f-4a24-98d8-02dbed626cb9"
+				"spark.autotune.trackingId": "046dc855-0e02-4809-9737-d7215af11c11"
 			}
 		},
 		"metadata": {
@@ -199,6 +199,11 @@
 			},
 			{
 				"cell_type": "code",
+				"metadata": {
+					"microsoft": {
+						"language": "python"
+					}
+				},
 				"source": [
 					"%%pyspark\r\n",
 					"from pyspark.sql.functions import monotonically_increasing_id,col, struct, when, isnan, cast \r\n",
@@ -258,6 +263,9 @@
 			{
 				"cell_type": "code",
 				"metadata": {
+					"microsoft": {
+						"language": "python"
+					},
 					"collapsed": false
 				},
 				"source": [
@@ -308,6 +316,9 @@
 			{
 				"cell_type": "code",
 				"metadata": {
+					"microsoft": {
+						"language": "python"
+					},
 					"collapsed": false
 				},
 				"source": [
@@ -372,6 +383,11 @@
 			},
 			{
 				"cell_type": "code",
+				"metadata": {
+					"microsoft": {
+						"language": "python"
+					}
+				},
 				"source": [
 					"%%pyspark\r\n",
 					"df = spark.sql(\"SELECT * FROM `default`.`doctorsuk` where SpatialDimValueCode = 'GBR'  and IndicatorCode = 'HWF_0002' and Period > 1999 order by Period\")\r\n",
@@ -433,6 +449,9 @@
 			{
 				"cell_type": "code",
 				"metadata": {
+					"microsoft": {
+						"language": "python"
+					},
 					"collapsed": false
 				},
 				"source": [
@@ -487,6 +506,9 @@
 			{
 				"cell_type": "code",
 				"metadata": {
+					"microsoft": {
+						"language": "python"
+					},
 					"collapsed": false
 				},
 				"source": [
@@ -549,6 +571,11 @@
 			},
 			{
 				"cell_type": "code",
+				"metadata": {
+					"microsoft": {
+						"language": "python"
+					}
+				},
 				"source": [
 					"%%pyspark\r\n",
 					"import pandas as pd\r\n",
@@ -615,6 +642,11 @@
 			},
 			{
 				"cell_type": "code",
+				"metadata": {
+					"microsoft": {
+						"language": "python"
+					}
+				},
 				"source": [
 					"%%pyspark\r\n",
 					"from pyspark.sql import functions as F\r\n",
@@ -667,6 +699,11 @@
 			},
 			{
 				"cell_type": "code",
+				"metadata": {
+					"microsoft": {
+						"language": "python"
+					}
+				},
 				"source": [
 					"%%pyspark\r\n",
 					"df = spark.sql(\"SELECT * FROM `default`.`ukgdppriceindex2022is100` order by Indicators\")\r\n",
@@ -713,6 +750,11 @@
 			},
 			{
 				"cell_type": "code",
+				"metadata": {
+					"microsoft": {
+						"language": "python"
+					}
+				},
 				"source": [
 					"%%pyspark\r\n",
 					"df = spark.sql(\"SELECT * FROM `default`.`uknetmigration` where Time > 1999\")\r\n",
@@ -749,6 +791,11 @@
 			},
 			{
 				"cell_type": "code",
+				"metadata": {
+					"microsoft": {
+						"language": "python"
+					}
+				},
 				"source": [
 					"%%pyspark\r\n",
 					"df = spark.sql(\"SELECT * FROM `default`.`ukpopulationbyageons`\")\r\n",
@@ -773,6 +820,11 @@
 			},
 			{
 				"cell_type": "code",
+				"metadata": {
+					"microsoft": {
+						"language": "python"
+					}
+				},
 				"source": [
 					"%%pyspark\r\n",
 					"resultDF = spark.sql('SELECT year,health_exp as health_exp_percentage_gdp,life_expect, maternal_mortality,infant_mortality,neonatal_mortality, under_5_mortality   FROM `default`.`worldhealthdata` where country_code = \"GBR\" and year > 1999 and  year < 2023')\r\n",
