@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "4538cd59-2e8b-4605-af18-79adbc3af144"
+				"spark.autotune.trackingId": "97678456-da7f-4d58-8f8f-9f7b575335d2"
 			}
 		},
 		"metadata": {
@@ -79,7 +79,7 @@
 					"\n",
 					"schema_name = 'warehouse'\n",
 					"table_name = 'uk_health_data'\n",
-					"table_name_forecast = 'uk_health_data_forecast'\n",
+					"table_name_forecast = 'uk_health_data_forecast_arima'\n",
 					"\n",
 					"df = spark.sql(\"SELECT * FROM `warehouse`.`uk_health_data`\")\n",
 					"\n",
@@ -126,10 +126,10 @@
 					"if forecast_results is not None:\n",
 					"    forecast_spark_df = spark.createDataFrame(forecast_results)\n",
 					"    forecast_spark_df.show()\n",
-					"\n",
-					"forecast_spark_df.write.format(\"delta\").mode(\"ignore\").saveAsTable(f\"{schema_name}.{table_name_forecast}\")"
+					"forecast_spark_df.write.format(\"delta\").mode(\"ignore\").saveAsTable(f\"{schema_name}.{table_name_forecast}\")\n",
+					""
 				],
-				"execution_count": 20
+				"execution_count": 23
 			},
 			{
 				"cell_type": "markdown",
@@ -207,10 +207,26 @@
 					"    print(f\"Under-5 Mortality: {pred_under_5_mortality[i]}\")\n",
 					"    print(\"\\n\")\n",
 					"\n",
+					"# Create a DataFrame with the predictions\n",
+					"predictions_df = pd.DataFrame({\n",
+					"    'year': future_years['year'],\n",
+					"    'health_exp_percentage_gdp': pred_health_exp,\n",
+					"    'life_expect': pred_life_expect,\n",
+					"    'maternal_mortality': pred_maternal_mortality,\n",
+					"    'infant_mortality': pred_infant_mortality,\n",
+					"    'neonatal_mortality': pred_neonatal_mortality,\n",
+					"    'under_5_mortality': pred_under_5_mortality\n",
+					"})\n",
+					"\n",
+					"# Convert the predictions DataFrame to a Spark DataFrame\n",
+					"predictions_spark_df = spark.createDataFrame(predictions_df)\n",
+					"\n",
+					"# Write the predictions to a Delta table\n",
+					"predictions_spark_df.write.format(\"delta\").mode(\"ignore\").saveAsTable(\"`warehouse`.`uk_health_data_forecast_ml`\")\n",
 					"\n",
 					""
 				],
-				"execution_count": 21
+				"execution_count": 22
 			}
 		]
 	}

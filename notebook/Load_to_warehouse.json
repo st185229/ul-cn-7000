@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "86229a2e-8d8e-4002-82e4-2584a8fb3e71"
+				"spark.autotune.trackingId": "4a9aea9f-c2b7-472d-b029-994939bf3489"
 			}
 		},
 		"metadata": {
@@ -134,11 +134,11 @@
 					"%%pyspark\n",
 					"\n",
 					"\n",
-					"spark.sql(f\"DROP TABLE IF EXISTS `warehouse`.`uk_health_data_forecast_ml`\")\n",
+					"spark.sql(f\"DROP TABLE IF EXISTS `warehouse`.`uk_health_data_forecast`\")\n",
 					"\n",
 					""
 				],
-				"execution_count": 17
+				"execution_count": 1
 			}
 		]
 	}
