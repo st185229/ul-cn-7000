@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "6f638eb6-3287-49b6-9733-e59406107ede"
+				"spark.autotune.trackingId": "4538cd59-2e8b-4605-af18-79adbc3af144"
 			}
 		},
 		"metadata": {
@@ -141,7 +141,7 @@
 					}
 				},
 				"source": [
-					"## Machine Learning"
+					"## Machine Learning - Regression"
 				]
 			},
 			{
