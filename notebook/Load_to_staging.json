@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "d5738897-197c-469e-a2bb-b291ef31200b"
+				"spark.autotune.trackingId": "fc9511b4-6651-4e02-955e-ab38293ba270"
 			}
 		},
 		"metadata": {
@@ -49,7 +49,40 @@
 		},
 		"cells": [
 			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"# Loading data from sources to staging tables"
+				]
+			},
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"## Load files to staging tables from Azure object/blob store\r\n",
+					"## If it already exists, then it skips\r\n",
+					"## It then stores into deleta table in parquet format "
+				]
+			},
+			{
 				"cell_type": "code",
+				"metadata": {
+					"microsoft": {
+						"language": "python"
+					}
+				},
 				"source": [
 					"%%pyspark\r\n",
 					"\r\n",
@@ -102,6 +135,19 @@
 				"execution_count": 1
 			},
 			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"# Listing of all tables"
+				]
+			},
+			{
 				"cell_type": "code",
 				"source": [
 					"from delta.tables import DeltaTable\r\n",
@@ -120,7 +166,7 @@
 					"\r\n",
 					""
 				],
-				"execution_count": 4
+				"execution_count": 2
 			}
 		]
 	}
