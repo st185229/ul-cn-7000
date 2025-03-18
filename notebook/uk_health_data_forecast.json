@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "02c79856-30b1-4112-8ce7-5ed2baf78d70"
+				"spark.autotune.trackingId": "a878e65b-eeab-4b54-8eef-7694c1dee205"
 			}
 		},
 		"metadata": {
@@ -227,6 +227,64 @@
 					""
 				],
 				"execution_count": 22
+			},
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"## Correlation matrix"
+				]
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"microsoft": {
+						"language": "python"
+					}
+				},
+				"source": [
+					"%%pyspark\n",
+					"\n",
+					"\n",
+					"import pandas as pd\n",
+					"from matplotlib import pyplot as plt\n",
+					"import seaborn as sns\n",
+					"\n",
+					"# Load data from the Spark SQL table\n",
+					"df = spark.sql(\"SELECT * FROM `warehouse`.`uk_health_data`\").toPandas()\n",
+					"\n",
+					"# Fill missing values with the mean of the column\n",
+					"df = df.fillna(df.mean())\n",
+					"corr = df.corr()\n",
+					"\n",
+					"plt.figure(figsize=(12,8))\n",
+					"sns.heatmap(corr, cmap=\"Greens\",annot=True)\n",
+					"c1 = corr.abs().unstack()\n",
+					"c1.sort_values(ascending = False)\n",
+					"corr[corr < 1].unstack().transpose()\\\n",
+					"    .sort_values( ascending=False)\\\n",
+					"    .drop_duplicates()"
+				],
+				"execution_count": 6
+			},
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"## UK_Health_expenditure_data_full"
+				]
 			}
 		]
 	}

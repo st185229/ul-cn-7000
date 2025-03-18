@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "fc9511b4-6651-4e02-955e-ab38293ba270"
+				"spark.autotune.trackingId": "d481d1f2-c827-43f5-9229-2adbf6fad5c5"
 			}
 		},
 		"metadata": {
@@ -91,10 +91,8 @@
 					"container_name = \"healthdata-fs\"\r\n",
 					"directory_path = \"data\"\r\n",
 					"\r\n",
-					"# Define the full path\r\n",
+					"# Define the full path in which raw CSVs are placed\r\n",
 					"full_path = f\"abfss://{container_name}@{storage_account_name}.dfs.core.windows.net/{directory_path}\"\r\n",
-					"\r\n",
-					"# df = spark.read.load('abfss://healthdata-fs@distributedanalytics.dfs.core.windows.net/data/CHEAsPercentGDP.csv', format='csv'\r\n",
 					"\r\n",
 					"\r\n",
 					"fs  = sc._jvm.org.apache.hadoop.fs.FileSystem.get(sc._jsc.hadoopConfiguration())\r\n",

@@ -18,7 +18,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "7d261dcc-7a65-4218-876e-eba3bb3baf73"
+				"spark.autotune.trackingId": "f95b8b53-956b-4204-af92-db87aff5f6a8"
 			}
 		},
 		"metadata": {
@@ -60,7 +60,7 @@
 				},
 				"source": [
 					"\r\n",
-					"# Current Health Expenditure (CHE) as % Gross Domestic Product (GDP)\r\n",
+					"## Current Health Expenditure (CHE) In million constant (2022) US$\r\n",
 					""
 				]
 			},
@@ -132,7 +132,7 @@
 					}
 				},
 				"source": [
-					"## Current Health Expenditure (CHE) -In million constant (2022) US$ ( Standarised based on USD 2022 to accomodate Inflation)"
+					"## Current Health Expenditure (CHE) -In million constant (2022) US$ ( Standarised based on USD 2022 to accomodate Inflation)- revenue from health care financilin schemes"
 				]
 			},
 			{
@@ -245,7 +245,7 @@
 					"plt.show()\r\n",
 					""
 				],
-				"execution_count": 50
+				"execution_count": 3
 			},
 			{
 				"cell_type": "markdown",
@@ -257,7 +257,7 @@
 					}
 				},
 				"source": [
-					"CHE - Current Health Expenses as percentage of GDP"
+					"## CHE - Current Health Expenses as percentage of GDP"
 				]
 			},
 			{
@@ -298,7 +298,7 @@
 					"plt.show()\r\n",
 					""
 				],
-				"execution_count": 51
+				"execution_count": 4
 			},
 			{
 				"cell_type": "markdown",
@@ -310,7 +310,7 @@
 					}
 				},
 				"source": [
-					"CHE per capita USD"
+					"## CHE per capita USD"
 				]
 			},
 			{
@@ -366,7 +366,7 @@
 					"plt.show()\r\n",
 					""
 				],
-				"execution_count": 52
+				"execution_count": 5
 			},
 			{
 				"cell_type": "markdown",
@@ -431,7 +431,7 @@
 					"plt.show()\r\n",
 					""
 				],
-				"execution_count": 53
+				"execution_count": 6
 			},
 			{
 				"cell_type": "markdown",
@@ -488,7 +488,7 @@
 					"\r\n",
 					"plt.show()"
 				],
-				"execution_count": 54
+				"execution_count": 7
 			},
 			{
 				"cell_type": "markdown",
@@ -554,7 +554,7 @@
 					"\r\n",
 					""
 				],
-				"execution_count": 55
+				"execution_count": 8
 			},
 			{
 				"cell_type": "markdown",
@@ -612,7 +612,7 @@
 					"\r\n",
 					"plt.show()"
 				],
-				"execution_count": 56
+				"execution_count": 9
 			},
 			{
 				"cell_type": "markdown",
@@ -682,7 +682,7 @@
 					"transposed_df.show(10)\r\n",
 					""
 				],
-				"execution_count": 57
+				"execution_count": 10
 			},
 			{
 				"cell_type": "markdown",
@@ -733,7 +733,7 @@
 					"transposed_df.show(24)\r\n",
 					""
 				],
-				"execution_count": 58
+				"execution_count": 11
 			},
 			{
 				"cell_type": "markdown",
@@ -761,7 +761,7 @@
 					"df = df.drop(*[df.columns[0]] ) \r\n",
 					"df.show(24)"
 				],
-				"execution_count": 63
+				"execution_count": 12
 			},
 			{
 				"cell_type": "markdown",
@@ -803,7 +803,7 @@
 					"\r\n",
 					""
 				],
-				"execution_count": 8
+				"execution_count": 13
 			},
 			{
 				"cell_type": "markdown",
@@ -838,7 +838,7 @@
 					"\r\n",
 					"resultDF.write.format(\"delta\").mode(\"ignore\").saveAsTable(f\"{schema_name}.{table_name}\")"
 				],
-				"execution_count": 26
+				"execution_count": 14
 			},
 			{
 				"cell_type": "code",
@@ -846,7 +846,7 @@
 					"df = spark.sql(\"SHOW schemas;\")\r\n",
 					"df.show()"
 				],
-				"execution_count": 23
+				"execution_count": 15
 			}
 		]
 	}
