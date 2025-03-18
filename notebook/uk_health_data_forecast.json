@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "a878e65b-eeab-4b54-8eef-7694c1dee205"
+				"spark.autotune.trackingId": "c5e1d573-e87e-4527-9ad3-8315785b7d0e"
 			}
 		},
 		"metadata": {
@@ -285,6 +285,43 @@
 				"source": [
 					"## UK_Health_expenditure_data_full"
 				]
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"microsoft": {
+						"language": "python"
+					},
+					"collapsed": false
+				},
+				"source": [
+					"%%pyspark\n",
+					"from pyspark.sql.functions import col, first\n",
+					"\n",
+					"\n",
+					"# Load the data\n",
+					"resultDF = spark.read.load('abfss://healthdata-fs@distributedanalytics.dfs.core.windows.net/data/uk_expenditure_data.csv', format='csv', header=True)\n",
+					"\n",
+					"# Select the columns to be transposed\n",
+					"indicators = resultDF.columns[1:]  # Assuming the first column is the indicator names\n",
+					"\n",
+					"# Create a new DataFrame with the transposed data\n",
+					"transposedDF = resultDF.selectExpr(\"stack(\" + str(len(indicators)) + \", \" + \", \".join([\"'\" + col + \"', \" + col for col in indicators]) + \") as (Indicator, Year, Value)\")\n",
+					"\n",
+					"# Pivot the DataFrame\n",
+					"pivotDF = transposedDF.groupBy(\"Year\").pivot(\"Indicator\").agg(first(\"Value\"))\n",
+					"\n",
+					"# Display the transposed DataFrame\n",
+					"display(pivotDF)\n",
+					"\n",
+					"\n",
+					"\n",
+					"\n",
+					"\n",
+					"\n",
+					""
+				],
+				"execution_count": 24
 			}
 		]
 	}
