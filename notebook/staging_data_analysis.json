@@ -18,7 +18,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "313411f4-9b05-4760-a3e9-020d5179be18"
+				"spark.autotune.trackingId": "db59fca2-2adc-449d-896f-3228bfff9699"
 			}
 		},
 		"metadata": {
@@ -836,10 +836,12 @@
 					"\r\n",
 					"\r\n",
 					"# Plot the graph\r\n",
-					"plt.figure(figsize=(15, 10))\r\n",
+					"plt.figure(figsize=(15, 20))\r\n",
 					"# Plot a subset of the data (e.g., every 5th age group)\r\n",
 					"for age in df_transposed.columns[::5]:\r\n",
 					"    plt.plot(df_transposed.index.astype(str), df_transposed[age], label=f'Age {age}')\r\n",
+					"    # Add text annotations for each line (legend on the graph itself)\r\n",
+					"    plt.annotate(f'Age {age}', (df_transposed.index[-1], df_transposed[age].values[-1]), fontsize=8)\r\n",
 					"\r\n",
 					"# Add grid lines\r\n",
 					"plt.grid(True)\r\n",
@@ -854,7 +856,7 @@
 					"\r\n",
 					""
 				],
-				"execution_count": 40
+				"execution_count": 42
 			},
 			{
 				"cell_type": "markdown",
