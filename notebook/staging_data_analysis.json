@@ -18,7 +18,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "64a82926-ed2e-444b-afa2-a823f4aeb3a9"
+				"spark.autotune.trackingId": "313411f4-9b05-4760-a3e9-020d5179be18"
 			}
 		},
 		"metadata": {
@@ -848,12 +848,13 @@
 					"plt.title('Population by Age Across Years')\r\n",
 					"plt.xlabel('Year')\r\n",
 					"plt.ylabel('Population')\r\n",
-					"plt.legend()\r\n",
+					"# Show legend over the graph itself\r\n",
+					"plt.legend(loc='upper left', bbox_to_anchor=(1, 1))\r\n",
 					"plt.show()\r\n",
 					"\r\n",
 					""
 				],
-				"execution_count": 39
+				"execution_count": 40
 			},
 			{
 				"cell_type": "markdown",
