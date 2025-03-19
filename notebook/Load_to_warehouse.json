@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "5bd4c7cc-2455-471f-acf0-fefe37966978"
+				"spark.autotune.trackingId": "4b7ee99b-ba70-4a10-8de7-4aa44ef8247f"
 			}
 		},
 		"metadata": {
@@ -111,6 +111,19 @@
 				"execution_count": 18
 			},
 			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"## GHED data for UK"
+				]
+			},
+			{
 				"cell_type": "code",
 				"metadata": {
 					"microsoft": {
@@ -145,6 +158,19 @@
 					"df.show(24)"
 				],
 				"execution_count": 2
+			},
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"## Code used in GHED data"
+				]
 			},
 			{
 				"cell_type": "code",
@@ -447,36 +473,6 @@
 					"df.show()"
 				],
 				"execution_count": 25
-			},
-			{
-				"cell_type": "markdown",
-				"metadata": {
-					"nteract": {
-						"transient": {
-							"deleting": false
-						}
-					}
-				},
-				"source": [
-					"## Delete table"
-				]
-			},
-			{
-				"cell_type": "code",
-				"metadata": {
-					"microsoft": {
-						"language": "python"
-					}
-				},
-				"source": [
-					"%%pyspark\n",
-					"\n",
-					"\n",
-					"spark.sql(f\"DROP TABLE IF EXISTS `warehouse`.`uk_health_data_forecast`\")\n",
-					"\n",
-					""
-				],
-				"execution_count": 1
 			}
 		]
 	}
