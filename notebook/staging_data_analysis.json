@@ -18,7 +18,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "72b785f4-72b1-4a70-9861-28401402325f"
+				"spark.autotune.trackingId": "64a82926-ed2e-444b-afa2-a823f4aeb3a9"
 			}
 		},
 		"metadata": {
@@ -838,7 +838,7 @@
 					"# Plot the graph\r\n",
 					"plt.figure(figsize=(15, 10))\r\n",
 					"# Plot a subset of the data (e.g., every 5th age group)\r\n",
-					"for age in df_transposed.columns[::1]:\r\n",
+					"for age in df_transposed.columns[::5]:\r\n",
 					"    plt.plot(df_transposed.index.astype(str), df_transposed[age], label=f'Age {age}')\r\n",
 					"\r\n",
 					"# Add grid lines\r\n",
@@ -853,7 +853,7 @@
 					"\r\n",
 					""
 				],
-				"execution_count": 38
+				"execution_count": 39
 			},
 			{
 				"cell_type": "markdown",
