@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "a57bd21a-3b2e-4060-845e-e0e8d58b5400"
+				"spark.autotune.trackingId": "18306c08-7fa1-4227-9c61-82461a14708b"
 			}
 		},
 		"metadata": {
@@ -261,6 +261,7 @@
 					"\n",
 					"# Fill missing values with the mean of the column\n",
 					"df = df.fillna(df.mean())\n",
+					"df.head()\n",
 					"corr = df.corr()\n",
 					"\n",
 					"plt.figure(figsize=(12,8))\n",
@@ -271,7 +272,7 @@
 					"    .sort_values( ascending=False)\\\n",
 					"    .drop_duplicates()"
 				],
-				"execution_count": 6
+				"execution_count": 64
 			},
 			{
 				"cell_type": "markdown",
@@ -298,6 +299,9 @@
 					"%%pyspark\n",
 					"from pyspark.sql.functions import col, first\n",
 					"from pyspark.sql.functions import mean\n",
+					"import pandas as pd\n",
+					"from matplotlib import pyplot as plt\n",
+					"import seaborn as sns\n",
 					"\n",
 					"\n",
 					"# Load the data\n",
@@ -361,7 +365,7 @@
 					"\n",
 					""
 				],
-				"execution_count": 63
+				"execution_count": 2
 			},
 			{
 				"cell_type": "markdown",
@@ -387,7 +391,9 @@
 					"%%pyspark\n",
 					"from pyspark.sql.functions import col, first\n",
 					"from pyspark.sql.functions import mean\n",
-					"\n",
+					"import pandas as pd\n",
+					"from matplotlib import pyplot as plt\n",
+					"import seaborn as sns\n",
 					"\n",
 					"# Load the data\n",
 					"resultDF = spark.read.load('abfss://healthdata-fs@distributedanalytics.dfs.core.windows.net/data/uk_expenditure_data_2.csv', format='csv', header=True)\n",
@@ -438,9 +444,36 @@
 					"    plt.figure(figsize=(30, 20))\n",
 					"    sns.heatmap(corr, cmap=\"Greens\", annot=True)\n",
 					"    plt.show()\n",
+					"\n",
+					"def sanitize_column_name(col_name, max_length=100):\n",
+					"    \"\"\"\n",
+					"    Replaces invalid characters with underscores and truncates long names.\n",
+					"\n",
+					"    Invalid characters: ' ,;{}()\\n\\t='\n",
+					"    \"\"\"\n",
+					"    invalid_chars = ' ,;{}()\\n\\t='\n",
+					"    sanitized = ''.join('_' if c in invalid_chars else c for c in col_name)\n",
+					"    sanitized = ''.join(c if c.isalnum() or c == '_' else '_' for c in sanitized) #Ensure only alnum and underscore are present.\n",
+					"    return sanitized[:max_length]\n",
+					"\n",
+					"\n",
+					"schema_name = 'warehouse'\n",
+					"table_name = 'uk_health_expenditure'\n",
+					"\n",
+					"sdf =  spark.createDataFrame(pdf)\n",
+					"\n",
+					"new_columns = [sanitize_column_name(col) for col in sdf.columns]\n",
+					"sdf = sdf.toDF(*new_columns)\n",
+					"\n",
+					"# Create schema if does not exists \n",
+					"spark_sql_schema_Create = f\"CREATE SCHEMA IF NOT EXISTS {schema_name};\"\n",
+					"spark.sql(spark_sql_schema_Create)\n",
+					"# Write as delta \n",
+					"sdf.write.format(\"delta\").mode(\"ignore\").saveAsTable(f\"{schema_name}.{table_name}\")\n",
+					"\n",
 					""
 				],
-				"execution_count": 57
+				"execution_count": 5
 			}
 		]
 	}
