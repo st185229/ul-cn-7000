@@ -1,0 +1,211 @@
+﻿IndicatorCode,Indicator,ParentLocationCode,SpatialDimValueCode,Period type,Period,IsLatestYear,FactValueNumeric,FactComments,DateModified
+HWF_0001,"Medical doctors (per 10,000)",EUR,GBR,Year,2023,TRUE,33.01,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0001,"Medical doctors (per 10,000)",EUR,GBR,Year,2022,FALSE,31.43,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0001,"Medical doctors (per 10,000)",EUR,GBR,Year,2021,FALSE,31.60,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0001,"Medical doctors (per 10,000)",EUR,GBR,Year,2020,FALSE,30.28,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0001,"Medical doctors (per 10,000)",EUR,GBR,Year,2019,FALSE,29.32,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0001,"Medical doctors (per 10,000)",EUR,GBR,Year,2018,FALSE,28.28,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0001,"Medical doctors (per 10,000)",EUR,GBR,Year,2017,FALSE,28.02,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0001,"Medical doctors (per 10,000)",EUR,GBR,Year,2016,FALSE,27.73,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0001,"Medical doctors (per 10,000)",EUR,GBR,Year,2015,FALSE,27.67,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0001,"Medical doctors (per 10,000)",EUR,GBR,Year,2014,FALSE,27.38,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0001,"Medical doctors (per 10,000)",EUR,GBR,Year,2013,FALSE,27.02,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0001,"Medical doctors (per 10,000)",EUR,GBR,Year,2012,FALSE,26.90,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0001,"Medical doctors (per 10,000)",EUR,GBR,Year,2011,FALSE,26.82,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0001,"Medical doctors (per 10,000)",EUR,GBR,Year,2010,FALSE,26.45,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0001,"Medical doctors (per 10,000)",EUR,GBR,Year,2009,FALSE,26.42,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0001,"Medical doctors (per 10,000)",EUR,GBR,Year,2008,FALSE,25.59,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0001,"Medical doctors (per 10,000)",EUR,GBR,Year,2007,FALSE,24.81,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0001,"Medical doctors (per 10,000)",EUR,GBR,Year,2006,FALSE,24.50,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0001,"Medical doctors (per 10,000)",EUR,GBR,Year,2005,FALSE,24.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0001,"Medical doctors (per 10,000)",EUR,GBR,Year,2004,FALSE,23.24,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0001,"Medical doctors (per 10,000)",EUR,GBR,Year,2003,FALSE,21.94,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0001,"Medical doctors (per 10,000)",EUR,GBR,Year,2002,FALSE,21.07,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0001,"Medical doctors (per 10,000)",EUR,GBR,Year,2001,FALSE,20.36,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0001,"Medical doctors (per 10,000)",EUR,GBR,Year,2000,FALSE,19.87,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0001,"Medical doctors (per 10,000)",EUR,GBR,Year,1999,FALSE,19.07,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0001,"Medical doctors (per 10,000)",EUR,GBR,Year,1998,FALSE,18.93,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0001,"Medical doctors (per 10,000)",EUR,GBR,Year,1997,FALSE,18.48,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0001,"Medical doctors (per 10,000)",EUR,GBR,Year,1996,FALSE,17.91,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0001,"Medical doctors (per 10,000)",EUR,GBR,Year,1995,FALSE,17.51,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0001,"Medical doctors (per 10,000)",EUR,GBR,Year,1994,FALSE,16.91,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0001,"Medical doctors (per 10,000)",EUR,GBR,Year,1993,FALSE,16.77,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0001,"Medical doctors (per 10,000)",EUR,GBR,Year,1992,FALSE,16.40,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0001,"Medical doctors (per 10,000)",EUR,GBR,Year,1991,FALSE,16.27,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0001,"Medical doctors (per 10,000)",EUR,GBR,Year,1990,FALSE,16.14,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,2023,TRUE,226725.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,2022,FALSE,214287.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,2021,FALSE,213839.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,2020,FALSE,203907.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,2019,FALSE,196784.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,2018,FALSE,188783.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,2017,FALSE,185921.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,2016,FALSE,182737.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,2015,FALSE,180888.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,2014,FALSE,177620.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,2013,FALSE,173985.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,2012,FALSE,172069.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,2011,FALSE,170317.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,2010,FALSE,166674.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,2009,FALSE,165109.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,2008,FALSE,158736.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,2007,FALSE,152679.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,2006,FALSE,149558.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,2005,FALSE,145413.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,2004,FALSE,139846.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,2003,FALSE,131272.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,2002,FALSE,125451.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,2001,FALSE,120709.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,2000,FALSE,117332.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,1999,FALSE,112183.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,1998,FALSE,110952.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,1997,FALSE,108030.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,1996,FALSE,104429.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,1995,FALSE,101803.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,1994,FALSE,98105.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,1993,FALSE,97055.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,1992,FALSE,94671.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,1991,FALSE,93663.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,1990,FALSE,92583.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,1989,FALSE,88607.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,1988,FALSE,86903.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,1987,FALSE,85284.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,1986,FALSE,81515.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,1985,FALSE,80763.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,1984,FALSE,79578.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,1983,FALSE,78737.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,1982,FALSE,75218.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,1981,FALSE,76042.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,1980,FALSE,74209.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,1979,FALSE,72293.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,1978,FALSE,68325.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,1977,FALSE,66846.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,1976,FALSE,65449.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,1975,FALSE,64107.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,1974,FALSE,61884.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,1973,FALSE,60575.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,1972,FALSE,58751.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,1971,FALSE,56710.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,1970,FALSE,52516.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,1969,FALSE,51318.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,1968,FALSE,50306.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,1967,FALSE,49084.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,1966,FALSE,48014.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,1965,FALSE,47505.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,1964,FALSE,47010.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,1963,FALSE,46723.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,1962,FALSE,46157.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,1961,FALSE,45224.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0002,Medical doctors (number),EUR,GBR,Year,1960,FALSE,44457.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0003,Generalist medical practitioners (number),EUR,GBR,Year,2023,TRUE,53966.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0003,Generalist medical practitioners (number),EUR,GBR,Year,2022,FALSE,54624.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0003,Generalist medical practitioners (number),EUR,GBR,Year,2021,FALSE,54502.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0003,Generalist medical practitioners (number),EUR,GBR,Year,2020,FALSE,52034.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0003,Generalist medical practitioners (number),EUR,GBR,Year,2019,FALSE,51096.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0003,Generalist medical practitioners (number),EUR,GBR,Year,2018,FALSE,49569.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0003,Generalist medical practitioners (number),EUR,GBR,Year,2017,FALSE,49824.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0003,Generalist medical practitioners (number),EUR,GBR,Year,2016,FALSE,50080.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0003,Generalist medical practitioners (number),EUR,GBR,Year,2015,FALSE,50169.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0003,Generalist medical practitioners (number),EUR,GBR,Year,2014,FALSE,50595.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0003,Generalist medical practitioners (number),EUR,GBR,Year,2013,FALSE,49875.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0003,Generalist medical practitioners (number),EUR,GBR,Year,2012,FALSE,50008.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0003,Generalist medical practitioners (number),EUR,GBR,Year,2011,FALSE,49838.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0003,Generalist medical practitioners (number),EUR,GBR,Year,2010,FALSE,48641.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0003,Generalist medical practitioners (number),EUR,GBR,Year,2009,FALSE,49437.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0003,Generalist medical practitioners (number),EUR,GBR,Year,2008,FALSE,46850.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0003,Generalist medical practitioners (number),EUR,GBR,Year,2007,FALSE,45362.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0003,Generalist medical practitioners (number),EUR,GBR,Year,2006,FALSE,44571.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0003,Generalist medical practitioners (number),EUR,GBR,Year,2005,FALSE,44199.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0003,Generalist medical practitioners (number),EUR,GBR,Year,2004,FALSE,42925.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0003,Generalist medical practitioners (number),EUR,GBR,Year,2003,FALSE,41647.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0003,Generalist medical practitioners (number),EUR,GBR,Year,2002,FALSE,40261.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0003,Generalist medical practitioners (number),EUR,GBR,Year,2001,FALSE,39687.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0003,Generalist medical practitioners (number),EUR,GBR,Year,2000,FALSE,39098.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0003,Generalist medical practitioners (number),EUR,GBR,Year,1999,FALSE,37061.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0003,Generalist medical practitioners (number),EUR,GBR,Year,1998,FALSE,36715.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0003,Generalist medical practitioners (number),EUR,GBR,Year,1997,FALSE,36303.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0003,Generalist medical practitioners (number),EUR,GBR,Year,1996,FALSE,35922.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0003,Generalist medical practitioners (number),EUR,GBR,Year,1995,FALSE,35661.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0003,Generalist medical practitioners (number),EUR,GBR,Year,1994,FALSE,35474.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0003,Generalist medical practitioners (number),EUR,GBR,Year,1993,FALSE,35155.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0003,Generalist medical practitioners (number),EUR,GBR,Year,1992,FALSE,34837.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0003,Generalist medical practitioners (number),EUR,GBR,Year,1991,FALSE,34442.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0003,Generalist medical practitioners (number),EUR,GBR,Year,1990,FALSE,34051.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0003,Generalist medical practitioners (number),EUR,GBR,Year,1989,FALSE,33308.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0003,Generalist medical practitioners (number),EUR,GBR,Year,1988,FALSE,32890.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0003,Generalist medical practitioners (number),EUR,GBR,Year,1987,FALSE,32432.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0003,Generalist medical practitioners (number),EUR,GBR,Year,1986,FALSE,32820.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0003,Generalist medical practitioners (number),EUR,GBR,Year,1985,FALSE,32406.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0003,Generalist medical practitioners (number),EUR,GBR,Year,1984,FALSE,31884.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0003,Generalist medical practitioners (number),EUR,GBR,Year,1983,FALSE,31314.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0003,Generalist medical practitioners (number),EUR,GBR,Year,1982,FALSE,30678.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0003,Generalist medical practitioners (number),EUR,GBR,Year,1981,FALSE,30097.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0003,Generalist medical practitioners (number),EUR,GBR,Year,1980,FALSE,29220.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0004,Specialist medical practitioners (number),EUR,GBR,Year,2023,TRUE,172646.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0004,Specialist medical practitioners (number),EUR,GBR,Year,2022,FALSE,159663.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0004,Specialist medical practitioners (number),EUR,GBR,Year,2021,FALSE,158855.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0004,Specialist medical practitioners (number),EUR,GBR,Year,2020,FALSE,151873.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0004,Specialist medical practitioners (number),EUR,GBR,Year,2019,FALSE,145367.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0004,Specialist medical practitioners (number),EUR,GBR,Year,2018,FALSE,138726.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0004,Specialist medical practitioners (number),EUR,GBR,Year,2017,FALSE,136097.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0004,Specialist medical practitioners (number),EUR,GBR,Year,2016,FALSE,132657.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0004,Specialist medical practitioners (number),EUR,GBR,Year,2015,FALSE,130719.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0004,Specialist medical practitioners (number),EUR,GBR,Year,2014,FALSE,127025.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0004,Specialist medical practitioners (number),EUR,GBR,Year,2013,FALSE,124110.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0004,Specialist medical practitioners (number),EUR,GBR,Year,2012,FALSE,122061.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0004,Specialist medical practitioners (number),EUR,GBR,Year,2011,FALSE,120479.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0004,Specialist medical practitioners (number),EUR,GBR,Year,2010,FALSE,118033.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0004,Specialist medical practitioners (number),EUR,GBR,Year,2009,FALSE,115672.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0004,Specialist medical practitioners (number),EUR,GBR,Year,2008,FALSE,111886.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0004,Specialist medical practitioners (number),EUR,GBR,Year,2007,FALSE,107317.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0004,Specialist medical practitioners (number),EUR,GBR,Year,2006,FALSE,104987.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0004,Specialist medical practitioners (number),EUR,GBR,Year,2005,FALSE,101214.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0004,Specialist medical practitioners (number),EUR,GBR,Year,2004,FALSE,96921.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0004,Specialist medical practitioners (number),EUR,GBR,Year,2003,FALSE,89625.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0004,Specialist medical practitioners (number),EUR,GBR,Year,2002,FALSE,85190.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0004,Specialist medical practitioners (number),EUR,GBR,Year,2001,FALSE,81022.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0004,Specialist medical practitioners (number),EUR,GBR,Year,2000,FALSE,78234.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0005,Medical doctors not further defined (number),EUR,GBR,Year,2023,TRUE,113.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0005,Medical doctors not further defined (number),EUR,GBR,Year,2021,FALSE,482.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0005,Medical doctors not further defined (number),EUR,GBR,Year,2019,FALSE,321.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0005,Medical doctors not further defined (number),EUR,GBR,Year,2018,FALSE,488.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0005,Medical doctors not further defined (number),EUR,GBR,Year,1999,FALSE,75122.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0005,Medical doctors not further defined (number),EUR,GBR,Year,1998,FALSE,74237.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0005,Medical doctors not further defined (number),EUR,GBR,Year,1997,FALSE,71727.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0005,Medical doctors not further defined (number),EUR,GBR,Year,1996,FALSE,68507.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0005,Medical doctors not further defined (number),EUR,GBR,Year,1995,FALSE,66142.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0005,Medical doctors not further defined (number),EUR,GBR,Year,1994,FALSE,62631.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0005,Medical doctors not further defined (number),EUR,GBR,Year,1993,FALSE,61900.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0005,Medical doctors not further defined (number),EUR,GBR,Year,1992,FALSE,59834.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0005,Medical doctors not further defined (number),EUR,GBR,Year,1991,FALSE,59221.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0005,Medical doctors not further defined (number),EUR,GBR,Year,1990,FALSE,58532.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0005,Medical doctors not further defined (number),EUR,GBR,Year,1989,FALSE,55299.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0005,Medical doctors not further defined (number),EUR,GBR,Year,1988,FALSE,54013.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0005,Medical doctors not further defined (number),EUR,GBR,Year,1987,FALSE,52852.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0005,Medical doctors not further defined (number),EUR,GBR,Year,1986,FALSE,48695.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0005,Medical doctors not further defined (number),EUR,GBR,Year,1985,FALSE,48357.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0005,Medical doctors not further defined (number),EUR,GBR,Year,1984,FALSE,47694.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0005,Medical doctors not further defined (number),EUR,GBR,Year,1983,FALSE,47423.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0005,Medical doctors not further defined (number),EUR,GBR,Year,1982,FALSE,44540.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0005,Medical doctors not further defined (number),EUR,GBR,Year,1981,FALSE,45945.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0005,Medical doctors not further defined (number),EUR,GBR,Year,1980,FALSE,44989.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0005,Medical doctors not further defined (number),EUR,GBR,Year,1979,FALSE,72293.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0005,Medical doctors not further defined (number),EUR,GBR,Year,1978,FALSE,68325.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0005,Medical doctors not further defined (number),EUR,GBR,Year,1977,FALSE,66846.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0005,Medical doctors not further defined (number),EUR,GBR,Year,1976,FALSE,65449.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0005,Medical doctors not further defined (number),EUR,GBR,Year,1975,FALSE,64107.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0005,Medical doctors not further defined (number),EUR,GBR,Year,1974,FALSE,61884.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0005,Medical doctors not further defined (number),EUR,GBR,Year,1973,FALSE,60575.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0005,Medical doctors not further defined (number),EUR,GBR,Year,1972,FALSE,58751.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0005,Medical doctors not further defined (number),EUR,GBR,Year,1971,FALSE,56710.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0005,Medical doctors not further defined (number),EUR,GBR,Year,1970,FALSE,52516.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0005,Medical doctors not further defined (number),EUR,GBR,Year,1969,FALSE,51318.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0005,Medical doctors not further defined (number),EUR,GBR,Year,1968,FALSE,50306.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0005,Medical doctors not further defined (number),EUR,GBR,Year,1967,FALSE,49084.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0005,Medical doctors not further defined (number),EUR,GBR,Year,1966,FALSE,48014.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0005,Medical doctors not further defined (number),EUR,GBR,Year,1965,FALSE,47505.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0005,Medical doctors not further defined (number),EUR,GBR,Year,1964,FALSE,47010.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0005,Medical doctors not further defined (number),EUR,GBR,Year,1963,FALSE,46723.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0005,Medical doctors not further defined (number),EUR,GBR,Year,1962,FALSE,46157.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0005,Medical doctors not further defined (number),EUR,GBR,Year,1961,FALSE,45224.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
+HWF_0005,Medical doctors not further defined (number),EUR,GBR,Year,1960,FALSE,44457.00,"NHWA data portal, December 2024 update https://apps.who.int/nhwaportal/",2025-01-14
