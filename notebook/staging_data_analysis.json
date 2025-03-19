@@ -18,7 +18,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "f95b8b53-956b-4204-af92-db87aff5f6a8"
+				"spark.autotune.trackingId": "48513685-aeb8-4aa7-9ce6-fc69e3e62da7"
 			}
 		},
 		"metadata": {
@@ -270,6 +270,10 @@
 				},
 				"source": [
 					"%%pyspark\r\n",
+					"\r\n",
+					"import pandas as pd\r\n",
+					"import matplotlib.pyplot as plt\r\n",
+					"\r\n",
 					"df = spark.sql(\"SELECT * FROM `default`.`cheaspercentgdp`\")\r\n",
 					"df.show(10)\r\n",
 					"\r\n",
@@ -323,6 +327,9 @@
 				},
 				"source": [
 					"%%pyspark\r\n",
+					"import pandas as pd\r\n",
+					"import matplotlib.pyplot as plt\r\n",
+					"\r\n",
 					"df = spark.sql(\"SELECT * FROM `default`.`chepercapitausd`where SpatialDimValueCode='GBR' order by Period  \")\r\n",
 					"\r\n",
 					"df.show(25)\r\n",
@@ -366,7 +373,7 @@
 					"plt.show()\r\n",
 					""
 				],
-				"execution_count": 5
+				"execution_count": 2
 			},
 			{
 				"cell_type": "markdown",
@@ -390,6 +397,9 @@
 				},
 				"source": [
 					"%%pyspark\r\n",
+					"import pandas as pd\r\n",
+					"import matplotlib.pyplot as plt\r\n",
+					"\r\n",
 					"df = spark.sql(\"SELECT * FROM `default`.`doctorsuk` where SpatialDimValueCode = 'GBR'  and IndicatorCode = 'HWF_0002' and Period > 1999 order by Period\")\r\n",
 					"\r\n",
 					"\r\n",
@@ -431,7 +441,7 @@
 					"plt.show()\r\n",
 					""
 				],
-				"execution_count": 6
+				"execution_count": 4
 			},
 			{
 				"cell_type": "markdown",
@@ -794,16 +804,56 @@
 				"metadata": {
 					"microsoft": {
 						"language": "python"
-					}
+					},
+					"collapsed": false
 				},
 				"source": [
 					"%%pyspark\r\n",
-					"df = spark.sql(\"SELECT * FROM `default`.`ukpopulationbyageons`\")\r\n",
-					"df.show(1)\r\n",
+					"\r\n",
+					"import matplotlib.pyplot as plt\r\n",
+					"import pandas as pd\r\n",
+					"\r\n",
+					"# SQL query to select the data\r\n",
+					"sql = \"SELECT `Age`, `2022`, `2021`, `2020`, `2019`, `2018`, `2017`, `2016`, `2015`, `2014`, `2013`, `2012`, `2011`, `2010`, `2009`, `2008`, `2007`, `2006`, `2005`, `2004`, `2003`, `2002`, `2001`, `2000` FROM ukpopulationbyageONS WHERE Age < 90\"\r\n",
+					"\r\n",
+					"# Execute the query and get the DataFrame\r\n",
+					"df = spark.sql(sql)\r\n",
+					"\r\n",
+					"# Show the DataFrame\r\n",
+					"df.show(10, False)\r\n",
+					"\r\n",
+					"# Convert the Spark DataFrame to a Pandas DataFrame\r\n",
+					"pdf = df.toPandas()\r\n",
+					"\r\n",
+					"# Set the Age column as the index\r\n",
+					"pdf.set_index('Age', inplace=True)\r\n",
+					"\r\n",
+					"# Transpose the DataFrame to have years as rows and ages as columns\r\n",
+					"df_transposed = pdf.T\r\n",
+					"\r\n",
+					"# Convert all column values to numeric (float or int)\r\n",
+					"df_transposed = df_transposed.apply(lambda x: pd.to_numeric(x.str.replace(',', ''), errors='coerce'))\r\n",
+					"\r\n",
+					"\r\n",
+					"# Plot the graph\r\n",
+					"plt.figure(figsize=(15, 10))\r\n",
+					"# Plot a subset of the data (e.g., every 5th age group)\r\n",
+					"for age in df_transposed.columns[::5]:\r\n",
+					"    plt.plot(df_transposed.index.astype(str), df_transposed[age], label=f'Age {age}')\r\n",
+					"\r\n",
+					"# Add grid lines\r\n",
+					"plt.grid(True)\r\n",
+					"\r\n",
+					"# Add title and labels\r\n",
+					"plt.title('Population by Age Across Years')\r\n",
+					"plt.xlabel('Year')\r\n",
+					"plt.ylabel('Population')\r\n",
+					"plt.legend()\r\n",
+					"plt.show()\r\n",
 					"\r\n",
 					""
 				],
-				"execution_count": 13
+				"execution_count": 31
 			},
 			{
 				"cell_type": "markdown",
