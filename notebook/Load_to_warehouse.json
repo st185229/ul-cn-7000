@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "87828a6c-a748-4b4d-981b-5619881166d8"
+				"spark.autotune.trackingId": "2329617c-3474-429b-86e0-6f0265717eb4"
 			}
 		},
 		"metadata": {
@@ -166,6 +166,21 @@
 					"# Read from staging\n",
 					"resultDF = spark.sql('SELECT * FROM `default`.`ghed_data_codes`')\n",
 					"\n",
+					"def sanitize_column_name(col_name, max_length=100):\n",
+					"    \"\"\"\n",
+					"    Replaces invalid characters with underscores and truncates long names.\n",
+					"\n",
+					"    Invalid characters: ' ,;{}()\\n\\t='\n",
+					"    \"\"\"\n",
+					"    invalid_chars = ' ,;{}()\\n\\t='\n",
+					"    sanitized = ''.join('_' if c in invalid_chars else c for c in col_name)\n",
+					"    sanitized = ''.join(c if c.isalnum() or c == '_' else '_' for c in sanitized) #Ensure only alnum and underscore are present.\n",
+					"    return sanitized[:max_length]\n",
+					"\n",
+					"\n",
+					"new_columns = [sanitize_column_name(col) for col in resultDF.columns]\n",
+					"resultDF = resultDF.toDF(*new_columns)\n",
+					"\n",
 					"\n",
 					"# Create schema if does not exists \n",
 					"spark_sql_schema_Create = f\"CREATE SCHEMA IF NOT EXISTS {schema_name};\"\n",
@@ -177,7 +192,7 @@
 					"\n",
 					"df.show(24)"
 				],
-				"execution_count": 3
+				"execution_count": 5
 			},
 			{
 				"cell_type": "markdown",
