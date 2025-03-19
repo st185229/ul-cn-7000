@@ -18,7 +18,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "b519172c-9d14-4f26-a0bf-966645fd08e9"
+				"spark.autotune.trackingId": "72b785f4-72b1-4a70-9861-28401402325f"
 			}
 		},
 		"metadata": {
@@ -814,7 +814,7 @@
 					"import pandas as pd\r\n",
 					"\r\n",
 					"# SQL query to select the data\r\n",
-					"sql = \"SELECT `Age`, `2022`, `2021`, `2020`, `2019`, `2018`, `2017`, `2016`, `2015`, `2014`, `2013`, `2012`, `2011`, `2010`, `2009`, `2008`, `2007`, `2006`, `2005`, `2004`, `2003`, `2002`, `2001`, `2000` FROM ukpopulation_byage_total WHERE Age < 2\"\r\n",
+					"sql = \"SELECT `Age`, `2000`, `2001`, `2002`, `2003`, `2004`, `2005`, `2006`, `2007`, `2008`, `2009`, `2010`, `2011`, `2012`, `2013`, `2014`, `2015`, `2016`, `2017`, `2018`, `2019`, `2020`, `2021`, `2022` FROM ukpopulation_byage_total WHERE Age < 90\"\r\n",
 					"\r\n",
 					"# Execute the query and get the DataFrame\r\n",
 					"df = spark.sql(sql)\r\n",
@@ -853,7 +853,7 @@
 					"\r\n",
 					""
 				],
-				"execution_count": 37
+				"execution_count": 38
 			},
 			{
 				"cell_type": "markdown",
