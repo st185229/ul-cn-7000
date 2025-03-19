@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "dacfe29f-8dd6-4ea8-b674-154ae38ffb1b"
+				"spark.autotune.trackingId": "5bd4c7cc-2455-471f-acf0-fefe37966978"
 			}
 		},
 		"metadata": {
@@ -207,7 +207,7 @@
 					"schema_name = 'warehouse'\n",
 					"table_name = 'uk_ghed_data_codes_v2'\n",
 					"\n",
-					"df = spark.sql(\"SELECT * FROM `warehouse`.`uk_ghed_data_codes` where variable_code  NOT in ('code'  \\\n",
+					"df = spark.sql(\"SELECT * FROM `warehouse`.`uk_ghed_data_codes` where variable_code   in ('code'  \\\n",
 					",'year'  \\\n",
 					",'che_gdp'  \\\n",
 					",'che_pc_usd'  \\\n",
@@ -432,13 +432,21 @@
 					"spark_sql_schema_create = f\"CREATE SCHEMA IF NOT EXISTS {schema_name};\"\n",
 					"spark.sql(spark_sql_schema_create)\n",
 					"# Write as delta \n",
-					"df.write.format(\"delta\").mode(\"ignore\").saveAsTable(f\"{schema_name}.{table_name}\")\n",
+					"df.write.format(\"delta\").mode(\"overwrite\").saveAsTable(f\"{schema_name}.{table_name}\")\n",
 					"# Select data \n",
 					"df = spark.sql(\"SELECT * FROM `warehouse`.`uk_ghed_data_codes_v2`\")\n",
 					"\n",
 					"df.show(10)"
 				],
-				"execution_count": 15
+				"execution_count": 23
+			},
+			{
+				"cell_type": "code",
+				"source": [
+					"df = spark.sql(\"select  count(*) FROM `warehouse`.`uk_ghed_data_codes_v2`\")\n",
+					"df.show()"
+				],
+				"execution_count": 25
 			},
 			{
 				"cell_type": "markdown",
