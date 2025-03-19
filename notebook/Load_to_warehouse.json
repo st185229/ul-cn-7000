@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "9998fc9f-cde4-495b-bcde-437d7b9d2a42"
+				"spark.autotune.trackingId": "87828a6c-a748-4b4d-981b-5619881166d8"
 			}
 		},
 		"metadata": {
@@ -144,7 +144,7 @@
 					"\n",
 					"df.show(24)"
 				],
-				"execution_count": 1
+				"execution_count": 2
 			},
 			{
 				"cell_type": "code",
@@ -166,10 +166,6 @@
 					"# Read from staging\n",
 					"resultDF = spark.sql('SELECT * FROM `default`.`ghed_data_codes`')\n",
 					"\n",
-					"# Convert 'year' column to integer\n",
-					"resultDF = resultDF.withColumn(\"year\", resultDF[\"year\"].cast(IntegerType()))\n",
-					"\n",
-					"\n",
 					"\n",
 					"# Create schema if does not exists \n",
 					"spark_sql_schema_Create = f\"CREATE SCHEMA IF NOT EXISTS {schema_name};\"\n",
@@ -181,7 +177,7 @@
 					"\n",
 					"df.show(24)"
 				],
-				"execution_count": null
+				"execution_count": 3
 			},
 			{
 				"cell_type": "markdown",
