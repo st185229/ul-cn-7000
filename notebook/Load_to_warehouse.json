@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "9e294d12-a90a-4973-ac02-291da528a432"
+				"spark.autotune.trackingId": "9998fc9f-cde4-495b-bcde-437d7b9d2a42"
 			}
 		},
 		"metadata": {
@@ -128,7 +128,7 @@
 					"table_name = 'uk_ghed_data'\n",
 					"\n",
 					"# Read from staging\n",
-					"resultDF = spark.sql('*   FROM `default`.`ghed_data`')\n",
+					"resultDF = spark.sql('SELECT * FROM `default`.`ghed_data`')\n",
 					"\n",
 					"# Convert 'year' column to integer\n",
 					"resultDF = resultDF.withColumn(\"year\", resultDF[\"year\"].cast(IntegerType()))\n",
@@ -164,7 +164,7 @@
 					"table_name = 'uk_ghed_data_codes'\n",
 					"\n",
 					"# Read from staging\n",
-					"resultDF = spark.sql('*   FROM `default`.`ghed_data_codes`')\n",
+					"resultDF = spark.sql('SELECT * FROM `default`.`ghed_data_codes`')\n",
 					"\n",
 					"# Convert 'year' column to integer\n",
 					"resultDF = resultDF.withColumn(\"year\", resultDF[\"year\"].cast(IntegerType()))\n",
