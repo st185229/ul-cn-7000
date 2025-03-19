@@ -18,7 +18,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "48513685-aeb8-4aa7-9ce6-fc69e3e62da7"
+				"spark.autotune.trackingId": "5c3778f2-40fc-4eab-b347-aaefedde60f4"
 			}
 		},
 		"metadata": {
@@ -814,7 +814,7 @@
 					"import pandas as pd\r\n",
 					"\r\n",
 					"# SQL query to select the data\r\n",
-					"sql = \"SELECT `Age`, `2022`, `2021`, `2020`, `2019`, `2018`, `2017`, `2016`, `2015`, `2014`, `2013`, `2012`, `2011`, `2010`, `2009`, `2008`, `2007`, `2006`, `2005`, `2004`, `2003`, `2002`, `2001`, `2000` FROM ukpopulationbyageONS WHERE Age < 90\"\r\n",
+					"sql = \"SELECT `Age`, `2022`, `2021`, `2020`, `2019`, `2018`, `2017`, `2016`, `2015`, `2014`, `2013`, `2012`, `2011`, `2010`, `2009`, `2008`, `2007`, `2006`, `2005`, `2004`, `2003`, `2002`, `2001`, `2000` FROM ukpopulationbyageONS WHERE Age < 2\"\r\n",
 					"\r\n",
 					"# Execute the query and get the DataFrame\r\n",
 					"df = spark.sql(sql)\r\n",
@@ -838,7 +838,7 @@
 					"# Plot the graph\r\n",
 					"plt.figure(figsize=(15, 10))\r\n",
 					"# Plot a subset of the data (e.g., every 5th age group)\r\n",
-					"for age in df_transposed.columns[::5]:\r\n",
+					"for age in df_transposed.columns[::1]:\r\n",
 					"    plt.plot(df_transposed.index.astype(str), df_transposed[age], label=f'Age {age}')\r\n",
 					"\r\n",
 					"# Add grid lines\r\n",
@@ -853,7 +853,7 @@
 					"\r\n",
 					""
 				],
-				"execution_count": 31
+				"execution_count": 37
 			},
 			{
 				"cell_type": "markdown",
