@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "cc010ddc-a4fc-435c-9e60-eb1cf7de0945"
+				"spark.autotune.trackingId": "cd75b5ac-703c-4baa-9da8-bb1b432e39e0"
 			}
 		},
 		"metadata": {
@@ -73,7 +73,7 @@
 				"source": [
 					"## Load files to staging tables from Azure object/blob store\r\n",
 					"## If it already exists, then it skips\r\n",
-					"## It then stores into deleta table in parquet format "
+					"## It then stores into delta table in parquet format "
 				]
 			},
 			{
@@ -130,7 +130,7 @@
 					"            \r\n",
 					""
 				],
-				"execution_count": 3
+				"execution_count": 2
 			},
 			{
 				"cell_type": "markdown",
@@ -164,7 +164,7 @@
 					"\r\n",
 					""
 				],
-				"execution_count": 4
+				"execution_count": 3
 			}
 		]
 	}
