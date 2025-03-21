@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "a9b4ebe3-efd3-429c-91ad-6594fc471196"
+				"spark.autotune.trackingId": "941ea264-0273-4df5-a40b-b40882e6b9e0"
 			}
 		},
 		"metadata": {
@@ -129,7 +129,7 @@
 					"forecast_spark_df.write.format(\"delta\").mode(\"ignore\").saveAsTable(f\"{schema_name}.{table_name_forecast}\")\n",
 					""
 				],
-				"execution_count": 23
+				"execution_count": 2
 			},
 			{
 				"cell_type": "markdown",
@@ -226,7 +226,7 @@
 					"\n",
 					""
 				],
-				"execution_count": 22
+				"execution_count": 3
 			},
 			{
 				"cell_type": "markdown",
@@ -272,7 +272,7 @@
 					"    .sort_values( ascending=False)\\\n",
 					"    .drop_duplicates()"
 				],
-				"execution_count": 64
+				"execution_count": 4
 			},
 			{
 				"cell_type": "markdown",
@@ -365,7 +365,7 @@
 					"\n",
 					""
 				],
-				"execution_count": 2
+				"execution_count": 5
 			},
 			{
 				"cell_type": "markdown",
@@ -473,7 +473,7 @@
 					"\n",
 					""
 				],
-				"execution_count": 1
+				"execution_count": 6
 			}
 		]
 	}
